@@ -85,14 +85,14 @@ const HeroSection = () => {
 
         {/* Quick Contact */}
         <div className="mt-8 flex items-center justify-center gap-4 text-sm text-gray-200">
-          <a href="tel:+918949540232" className="flex items-center gap-2 hover:text-[#B8860B] transition">
+          <a href="tel:+917725945908" className="flex items-center gap-2 hover:text-[#B8860B] transition">
             <FaPhone size={14} />
-            +91 8949540232
+            +91 7725945908
           </a>
           <span className="text-[#B8860B]">|</span>
-          <a href="tel:+919460129249" className="flex items-center gap-2 hover:text-[#B8860B] transition">
+          <a href="tel:+918503998922" className="flex items-center gap-2 hover:text-[#B8860B] transition">
             <FaPhone size={14} />
-            +91 9460129249
+            +91 8503998922
           </a>
         </div>
       </div>

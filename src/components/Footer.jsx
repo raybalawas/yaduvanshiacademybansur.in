@@ -178,14 +178,14 @@ const Footer = () => {
               <FaPhoneAlt className="text-[#B8860B] flex-shrink-0" />
               <span>
                 <a
-                  href="tel:+918949540232"
+                  href="tel:+917725945908"
                   className="hover:text-[#B8860B] transition"
                 >
                   +91 7725945908
                 </a>
                 ,{" "}
                 <a
-                  href="tel:+919460129249"
+                  href="tel:+918503998922"
                   className="hover:text-[#B8860B] transition"
                 >
                   +91 8503998922
@@ -315,7 +315,7 @@ const Footer = () => {
             Admission Open {new Date().getFullYear()}
           </span>
           <a
-            href="tel:+918949540232"
+            href="tel:+917725945908"
             className="bg-white text-[#0B3B2C] px-4 py-1 rounded-full text-sm font-bold"
           >
             Call Now
