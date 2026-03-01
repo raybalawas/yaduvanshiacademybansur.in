@@ -18,11 +18,11 @@ import {
 } from "react-icons/fa";
 
 // Import course images (add these to your assets folder)
-import sainikImage from "../assets/SainikSchool.png";
+// import sainikImage from "../assets/SainikSchool.png";
 import militaryImage from "../assets/militrySchool.png";
-import rimcImage from "../assets/SainikSchool.png";
+// import rimcImage from "../assets/SainikSchool.png";
 import ndaImage from "../assets/militrySchool.png";
-import ssbImage from "../assets/SainikSchool.png";
+// import ssbImage from "../assets/SainikSchool.png";
 import physicalImage from "../assets/militrySchool.png";
 
 const CoursesPage = () => {
@@ -30,67 +30,67 @@ const CoursesPage = () => {
   const [expandedCourse, setExpandedCourse] = useState(null);
 
   const courses = [
-    {
-      id: 1,
-      title: "Sainik School Coaching (Class 6)",
-      category: "sainik",
-      image: sainikImage,
-      duration: "1 Year (Full Time)",
-      fee: "45,000",
-      batchSize: "25-30 students",
-      ageGroup: "10-12 years",
-      exam: "AISSEE - Class 6",
-      description: "Comprehensive coaching for All India Sainik Schools Entrance Examination for Class 6 admission. Focus on building strong fundamentals in all subjects.",
-      features: [
-        "Complete syllabus coverage - Maths, Intelligence, Language, GK",
-        "Weekly mock tests with performance analysis",
-        "Doubt clearing sessions",
-        "Study materials & practice papers",
-        "Previous years' question papers",
-        "Regular parent-teacher meetings"
-      ],
-      curriculum: [
-        "Mathematics - Number system, Algebra, Geometry, Mensuration",
-        "Intelligence - Verbal & Non-verbal reasoning",
-        "English - Grammar, Comprehension, Vocabulary",
-        "General Knowledge - Current affairs, Science, Social Studies"
-      ],
-      schedule: "Mon-Sat: 8:00 AM - 2:00 PM",
-      faculty: "Experienced teachers with defence background",
-      successRate: "85% selection rate",
-      icon: <FaSchool className="text-3xl" />
-    },
-    {
-      id: 2,
-      title: "Sainik School Coaching (Class 9)",
-      category: "sainik",
-      image: sainikImage,
-      duration: "1 Year (Full Time)",
-      fee: "48,000",
-      batchSize: "25-30 students",
-      ageGroup: "13-15 years",
-      exam: "AISSEE - Class 9",
-      description: "Specialized coaching for Class 9 Sainik School entrance exam with advanced curriculum and intensive practice.",
-      features: [
-        "Advanced Mathematics & Science",
-        "English & Reasoning preparation",
-        "General Knowledge & Current Affairs",
-        "Mock tests & previous papers",
-        "Personalized attention",
-        "Weekly progress reports"
-      ],
-      curriculum: [
-        "Mathematics - Advanced algebra, Trigonometry, Statistics",
-        "Science - Physics, Chemistry, Biology basics",
-        "English - Advanced grammar, Writing skills",
-        "Social Studies - History, Geography, Civics",
-        "Intelligence Test - Complex reasoning"
-      ],
-      schedule: "Mon-Sat: 8:00 AM - 2:00 PM",
-      faculty: "Subject matter experts with defence academy experience",
-      successRate: "80% selection rate",
-      icon: <FaSchool className="text-3xl" />
-    },
+    // {
+    //   id: 1,
+    //   title: "Sainik School Coaching (Class 6)",
+    //   category: "sainik",
+    //   image: sainikImage,
+    //   duration: "1 Year (Full Time)",
+    //   fee: "45,000",
+    //   batchSize: "25-30 students",
+    //   ageGroup: "10-12 years",
+    //   exam: "AISSEE - Class 6",
+    //   description: "Comprehensive coaching for All India Sainik Schools Entrance Examination for Class 6 admission. Focus on building strong fundamentals in all subjects.",
+    //   features: [
+    //     "Complete syllabus coverage - Maths, Intelligence, Language, GK",
+    //     "Weekly mock tests with performance analysis",
+    //     "Doubt clearing sessions",
+    //     "Study materials & practice papers",
+    //     "Previous years' question papers",
+    //     "Regular parent-teacher meetings"
+    //   ],
+    //   curriculum: [
+    //     "Mathematics - Number system, Algebra, Geometry, Mensuration",
+    //     "Intelligence - Verbal & Non-verbal reasoning",
+    //     "English - Grammar, Comprehension, Vocabulary",
+    //     "General Knowledge - Current affairs, Science, Social Studies"
+    //   ],
+    //   schedule: "Mon-Sat: 8:00 AM - 2:00 PM",
+    //   faculty: "Experienced teachers with defence background",
+    //   successRate: "85% selection rate",
+    //   icon: <FaSchool className="text-3xl" />
+    // },
+    // {
+    //   id: 2,
+    //   title: "Sainik School Coaching (Class 9)",
+    //   category: "sainik",
+    //   image: sainikImage,
+    //   duration: "1 Year (Full Time)",
+    //   fee: "48,000",
+    //   batchSize: "25-30 students",
+    //   ageGroup: "13-15 years",
+    //   exam: "AISSEE - Class 9",
+    //   description: "Specialized coaching for Class 9 Sainik School entrance exam with advanced curriculum and intensive practice.",
+    //   features: [
+    //     "Advanced Mathematics & Science",
+    //     "English & Reasoning preparation",
+    //     "General Knowledge & Current Affairs",
+    //     "Mock tests & previous papers",
+    //     "Personalized attention",
+    //     "Weekly progress reports"
+    //   ],
+    //   curriculum: [
+    //     "Mathematics - Advanced algebra, Trigonometry, Statistics",
+    //     "Science - Physics, Chemistry, Biology basics",
+    //     "English - Advanced grammar, Writing skills",
+    //     "Social Studies - History, Geography, Civics",
+    //     "Intelligence Test - Complex reasoning"
+    //   ],
+    //   schedule: "Mon-Sat: 8:00 AM - 2:00 PM",
+    //   faculty: "Subject matter experts with defence academy experience",
+    //   successRate: "80% selection rate",
+    //   icon: <FaSchool className="text-3xl" />
+    // },
     {
       id: 3,
       title: "Military School (RMS) Coaching",
@@ -121,37 +121,37 @@ const CoursesPage = () => {
       successRate: "75% selection rate",
       icon: <FaMedal className="text-3xl" />
     },
-    {
-      id: 4,
-      title: "RIMC Coaching Program",
-      category: "rimc",
-      image: rimcImage,
-      duration: "6 Months (Residential)",
-      fee: "85,000",
-      batchSize: "15-20 students",
-      ageGroup: "11-13 years (Boys only)",
-      exam: "RIMC Entrance Exam",
-      description: "Intensive residential coaching for Rashtriya Indian Military College (RIMC) Dehradun. Limited seats with focused preparation.",
-      features: [
-        "Residential facility with military discipline",
-        "English essay & comprehension focus",
-        "Advanced Mathematics coaching",
-        "General Knowledge & current affairs",
-        "Interview & personality assessment",
-        "Medical examination guidance",
-        "Physical training & sports"
-      ],
-      curriculum: [
-        "English - Essay writing, Comprehension, Grammar",
-        "Mathematics - Advanced topics",
-        "General Knowledge - History, Geography, Current events",
-        "Interview preparation - SSB style"
-      ],
-      schedule: "Full time residential",
-      faculty: "Retired defence officers & experienced educators",
-      successRate: "90% selection rate (limited seats)",
-      icon: <FaTrophy className="text-3xl" />
-    },
+    // {
+    //   id: 4,
+    //   title: "RIMC Coaching Program",
+    //   category: "rimc",
+    //   image: rimcImage,
+    //   duration: "6 Months (Residential)",
+    //   fee: "85,000",
+    //   batchSize: "15-20 students",
+    //   ageGroup: "11-13 years (Boys only)",
+    //   exam: "RIMC Entrance Exam",
+    //   description: "Intensive residential coaching for Rashtriya Indian Military College (RIMC) Dehradun. Limited seats with focused preparation.",
+    //   features: [
+    //     "Residential facility with military discipline",
+    //     "English essay & comprehension focus",
+    //     "Advanced Mathematics coaching",
+    //     "General Knowledge & current affairs",
+    //     "Interview & personality assessment",
+    //     "Medical examination guidance",
+    //     "Physical training & sports"
+    //   ],
+    //   curriculum: [
+    //     "English - Essay writing, Comprehension, Grammar",
+    //     "Mathematics - Advanced topics",
+    //     "General Knowledge - History, Geography, Current events",
+    //     "Interview preparation - SSB style"
+    //   ],
+    //   schedule: "Full time residential",
+    //   faculty: "Retired defence officers & experienced educators",
+    //   successRate: "90% selection rate (limited seats)",
+    //   icon: <FaTrophy className="text-3xl" />
+    // },
     {
       id: 5,
       title: "NDA Foundation Course",
@@ -184,38 +184,38 @@ const CoursesPage = () => {
       successRate: "70% progress to NDA coaching",
       icon: <FaUserGraduate className="text-3xl" />
     },
-    {
-      id: 6,
-      title: "SSB Interview Preparation",
-      category: "ssb",
-      image: ssbImage,
-      duration: "3 Months",
-      fee: "35,000",
-      batchSize: "15-20 students",
-      ageGroup: "17-22 years",
-      exam: "SSB Interview",
-      description: "Comprehensive preparation for Services Selection Board (SSB) interview including psychology tests, GTO tasks, and personal interview.",
-      features: [
-        "Psychology tests - TAT, WAT, SRT, PI",
-        "GTO tasks - Group discussions, GD, GPE",
-        "Personal interview preparation",
-        "Lecturette practice",
-        "Physical fitness training",
-        "Mock SSB boards",
-        "Individual feedback sessions"
-      ],
-      curriculum: [
-        "Stage 1 - Screening (OIR, PPDT)",
-        "Stage 2 - Psychology tests",
-        "Stage 2 - GTO tasks",
-        "Stage 2 - Personal interview",
-        "Conference preparation"
-      ],
-      schedule: "Mon-Sat: 8:00 AM - 4:00 PM",
-      faculty: "Retired officers & psychologists",
-      successRate: "85% recommendation rate",
-      icon: <FaClipboardList className="text-3xl" />
-    },
+    // {
+    //   id: 6,
+    //   title: "SSB Interview Preparation",
+    //   category: "ssb",
+    //   image: ssbImage,
+    //   duration: "3 Months",
+    //   fee: "35,000",
+    //   batchSize: "15-20 students",
+    //   ageGroup: "17-22 years",
+    //   exam: "SSB Interview",
+    //   description: "Comprehensive preparation for Services Selection Board (SSB) interview including psychology tests, GTO tasks, and personal interview.",
+    //   features: [
+    //     "Psychology tests - TAT, WAT, SRT, PI",
+    //     "GTO tasks - Group discussions, GD, GPE",
+    //     "Personal interview preparation",
+    //     "Lecturette practice",
+    //     "Physical fitness training",
+    //     "Mock SSB boards",
+    //     "Individual feedback sessions"
+    //   ],
+    //   curriculum: [
+    //     "Stage 1 - Screening (OIR, PPDT)",
+    //     "Stage 2 - Psychology tests",
+    //     "Stage 2 - GTO tasks",
+    //     "Stage 2 - Personal interview",
+    //     "Conference preparation"
+    //   ],
+    //   schedule: "Mon-Sat: 8:00 AM - 4:00 PM",
+    //   faculty: "Retired officers & psychologists",
+    //   successRate: "85% recommendation rate",
+    //   icon: <FaClipboardList className="text-3xl" />
+    // },
     {
       id: 7,
       title: "Physical Training Program",
