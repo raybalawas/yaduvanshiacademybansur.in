@@ -20,7 +20,8 @@ import {
 // Import course images (add these to your assets folder)
 // import sainikImage from "../assets/SainikSchool.png";
 import militaryImage from "../assets/militrySchool.png";
-// import rimcImage from "../assets/SainikSchool.png";
+// import rimcImage from "../assets/SainikSchool.png";\
+
 import ndaImage from "../assets/militrySchool.png";
 // import ssbImage from "../assets/SainikSchool.png";
 import physicalImage from "../assets/militrySchool.png";
