@@ -206,7 +206,7 @@ const AdmissionPage = () => {
           <div className="text-center">
             <div className="text-[#B8860B] font-bold text-xl">📅</div>
             <div className="text-sm font-semibold text-gray-800">Last Date</div>
-            <div className="text-xs text-gray-600">31 Dec 2024</div>
+            <div className="text-xs text-gray-600">coming soon</div>
           </div>
           <div className="text-center">
             <div className="text-[#B8860B] font-bold text-xl">🎯</div>
@@ -216,7 +216,7 @@ const AdmissionPage = () => {
           <div className="text-center">
             <div className="text-[#B8860B] font-bold text-xl">⏰</div>
             <div className="text-sm font-semibold text-gray-800">Test Date</div>
-            <div className="text-xs text-gray-600">15 Dec 2024</div>
+            <div className="text-xs text-gray-600">coming soon</div>
           </div>
           <div className="text-center">
             <div className="text-[#B8860B] font-bold text-xl">💺</div>
@@ -232,8 +232,8 @@ const AdmissionPage = () => {
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {[
             { id: "process", label: "Admission Process", icon: "📋" },
-            { id: "dates", label: "Important Dates", icon: "📅" },
-            { id: "fees", label: "Fee Structure", icon: "💰" },
+            // { id: "dates", label: "Important Dates", icon: "📅" },
+            // { id: "fees", label: "Fee Structure", icon: "💰" },
             { id: "docs", label: "Documents Required", icon: "📄" },
             { id: "faq", label: "FAQ", icon: "❓" },
           ].map((tab) => (

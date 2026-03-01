@@ -18,12 +18,12 @@ import {
 } from "react-icons/fa";
 
 // Import course images (add these to your assets folder)
-import sainikImage from "../assets/portfolio1.png";
-import militaryImage from "../assets/portfolio1.png";
-import rimcImage from "../assets/portfolio1.png";
-import ndaImage from "../assets/portfolio1.png";
-import ssbImage from "../assets/portfolio1.png";
-import physicalImage from "../assets/portfolio1.png";
+import sainikImage from "../assets/SainikSchool.png";
+import militaryImage from "../assets/militrySchool.png";
+import rimcImage from "../assets/SainikSchool.png";
+import ndaImage from "../assets/militrySchool.png";
+import ssbImage from "../assets/SainikSchool.png";
+import physicalImage from "../assets/militrySchool.png";
 
 const CoursesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -216,38 +216,38 @@ const CoursesPage = () => {
       successRate: "85% recommendation rate",
       icon: <FaClipboardList className="text-3xl" />
     },
-    {
-      id: 7,
-      title: "Physical Training Program",
-      category: "physical",
-      image: physicalImage,
-      duration: "6 Months",
-      fee: "25,000",
-      batchSize: "20-25 students",
-      ageGroup: "All age groups",
-      exam: "Physical Fitness Tests",
-      description: "Specialized physical training to meet defence fitness standards. Includes running, endurance, strength training, and sports.",
-      features: [
-        "Daily PT & drills",
-        "Running - 1.6km, 5km training",
-        "Endurance building",
-        "Strength training",
-        "Long jump & high jump practice",
-        "Obstacle course training",
-        "Sports - Football, Basketball, Volleyball",
-        "Yoga & meditation"
-      ],
-      curriculum: [
-        "Morning PT - 6:00 AM - 7:30 AM",
-        "Evening sports - 4:00 PM - 6:00 PM",
-        "Weekly fitness assessments",
-        "Diet & nutrition guidance"
-      ],
-      schedule: "Daily morning & evening",
-      faculty: "Physical instructors & ex-servicemen",
-      successRate: "100% fitness improvement",
-      icon: <FaRunning className="text-3xl" />
-    }
+    // {
+    //   id: 7,
+    //   title: "Physical Training Program",
+    //   category: "physical",
+    //   image: physicalImage,
+    //   duration: "6 Months",
+    //   fee: "25,000",
+    //   batchSize: "20-25 students",
+    //   ageGroup: "All age groups",
+    //   exam: "Physical Fitness Tests",
+    //   description: "Specialized physical training to meet defence fitness standards. Includes running, endurance, strength training, and sports.",
+    //   features: [
+    //     "Daily PT & drills",
+    //     "Running - 1.6km, 5km training",
+    //     "Endurance building",
+    //     "Strength training",
+    //     "Long jump & high jump practice",
+    //     "Obstacle course training",
+    //     "Sports - Football, Basketball, Volleyball",
+    //     "Yoga & meditation"
+    //   ],
+    //   curriculum: [
+    //     "Morning PT - 6:00 AM - 7:30 AM",
+    //     "Evening sports - 4:00 PM - 6:00 PM",
+    //     "Weekly fitness assessments",
+    //     "Diet & nutrition guidance"
+    //   ],
+    //   schedule: "Daily morning & evening",
+    //   faculty: "Physical instructors & ex-servicemen",
+    //   successRate: "100% fitness improvement",
+    //   icon: <FaRunning className="text-3xl" />
+    // }
   ];
 
   const categories = [
@@ -439,7 +439,7 @@ const CoursesPage = () => {
                     Enroll Now
                   </button>
                   <a
-                    href="https://wa.me/918949540232"
+                    href="https://wa.me/917725945908"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
@@ -472,14 +472,14 @@ const CoursesPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+918949540232"
+              href="tel:+917725945908"
               className="px-8 py-3 bg-[#B8860B] hover:bg-[#9E7008] text-white rounded-lg font-semibold transition flex items-center justify-center gap-2"
             >
               <FaPhone />
-              Call Now: +91 8949540232
+              Call Now: +91 7725945908
             </a>
             <a
-              href="https://wa.me/918949540232"
+              href="https://wa.me/917725945908"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition flex items-center justify-center gap-2"

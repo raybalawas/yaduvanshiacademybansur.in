@@ -1,6 +1,6 @@
 import React from "react";
-import sainikImage from "../assets/portfolio1.png";
-import militaryImage from "../assets/portfolio2.png";
+import sainikImage from "../assets/sainikSchool.png";
+import militaryImage from "../assets/militrySchool.png";
 
 const courses = [
   {

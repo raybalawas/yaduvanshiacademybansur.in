@@ -58,7 +58,7 @@ const About = () => {
           </h2>
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="bg-[#B8860B] text-white px-4 py-1 rounded-full text-sm font-semibold">
-              Since 2010
+              Since 2014
             </span>
             <span className="bg-[#0B3B2C] text-white px-4 py-1 rounded-full text-sm font-semibold">
               ESTD
@@ -194,7 +194,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-[#B8860B]" />
-                <p>+91 8949540232, +91 9460129249</p>
+                <p>+91 7725945908, +91 8503998922</p>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-[#B8860B]" />
@@ -227,8 +227,8 @@ const About = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#B8860B] hover:text-[#0B3B2C] transition"
           >
-            <FaMapMarkerAlt />
-            View on Google Maps
+            {/* <FaMapMarkerAlt /> */}
+            {/* View on Google Maps */}
           </a>
         </div>
       </div>

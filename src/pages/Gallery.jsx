@@ -451,7 +451,7 @@ const GalleryPage = () => {
             See our facilities and training in person
           </p>
           <a
-            href="https://wa.me/918949540232"
+            href="https://wa.me/917725945908"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-[#B8860B] hover:bg-[#9E7008] text-white rounded-lg font-semibold transition"
