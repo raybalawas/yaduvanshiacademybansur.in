@@ -1,8 +1,8 @@
 import React from "react";
-import HeroSection from "../components/HeroSection";
-import StatsSection from "../components/StatsSection";
-import BulkMessagingSection from "../components/BulkMessagingSection";
-import SlideSection from "../components/SlideSection";
+import HeroSection from "../components/HeroSection.jsx";
+import StatsSection from "../components/StatsSection.jsx";
+import BulkMessagingSection from "../components/BulkMessagingSection.jsx";
+import SlideSection from "../components/SlideSection.jsx";
 // import PopupModal from '../components/PopupModal';
 
 const Home = () => {
