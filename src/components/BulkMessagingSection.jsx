@@ -57,6 +57,7 @@ const courses = [
   },
 ];
 
+
 const CoursesSection = () => {
   return (
     <section className="bg-gray-50 py-20">
