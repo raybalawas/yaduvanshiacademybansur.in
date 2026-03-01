@@ -216,38 +216,38 @@ const CoursesPage = () => {
       successRate: "85% recommendation rate",
       icon: <FaClipboardList className="text-3xl" />
     },
-    // {
-    //   id: 7,
-    //   title: "Physical Training Program",
-    //   category: "physical",
-    //   image: physicalImage,
-    //   duration: "6 Months",
-    //   fee: "25,000",
-    //   batchSize: "20-25 students",
-    //   ageGroup: "All age groups",
-    //   exam: "Physical Fitness Tests",
-    //   description: "Specialized physical training to meet defence fitness standards. Includes running, endurance, strength training, and sports.",
-    //   features: [
-    //     "Daily PT & drills",
-    //     "Running - 1.6km, 5km training",
-    //     "Endurance building",
-    //     "Strength training",
-    //     "Long jump & high jump practice",
-    //     "Obstacle course training",
-    //     "Sports - Football, Basketball, Volleyball",
-    //     "Yoga & meditation"
-    //   ],
-    //   curriculum: [
-    //     "Morning PT - 6:00 AM - 7:30 AM",
-    //     "Evening sports - 4:00 PM - 6:00 PM",
-    //     "Weekly fitness assessments",
-    //     "Diet & nutrition guidance"
-    //   ],
-    //   schedule: "Daily morning & evening",
-    //   faculty: "Physical instructors & ex-servicemen",
-    //   successRate: "100% fitness improvement",
-    //   icon: <FaRunning className="text-3xl" />
-    // }
+    {
+      id: 7,
+      title: "Physical Training Program",
+      category: "physical",
+      image: physicalImage,
+      duration: "6 Months",
+      fee: "25,000",
+      batchSize: "20-25 students",
+      ageGroup: "All age groups",
+      exam: "Physical Fitness Tests",
+      description: "Specialized physical training to meet defence fitness standards. Includes running, endurance, strength training, and sports.",
+      features: [
+        "Daily PT & drills",
+        "Running - 1.6km, 5km training",
+        "Endurance building",
+        "Strength training",
+        "Long jump & high jump practice",
+        "Obstacle course training",
+        "Sports - Football, Basketball, Volleyball",
+        "Yoga & meditation"
+      ],
+      curriculum: [
+        "Morning PT - 6:00 AM - 7:30 AM",
+        "Evening sports - 4:00 PM - 6:00 PM",
+        "Weekly fitness assessments",
+        "Diet & nutrition guidance"
+      ],
+      schedule: "Daily morning & evening",
+      faculty: "Physical instructors & ex-servicemen",
+      successRate: "100% fitness improvement",
+      icon: <FaRunning className="text-3xl" />
+    }
   ];
 
   const categories = [
