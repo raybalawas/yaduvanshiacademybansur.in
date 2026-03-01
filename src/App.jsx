@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import Courses from "./pages/Courses";
-import Gallery from "./pages/Gallery";
-import Admission from "./pages/Admission";
-import WhatsAppButton from "./components/WhatsAppButton";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import Contact from "./pages/Contact.jsx";
+import About from "./pages/About.jsx";
+import Courses from "./pages/Courses.jsx";
+import Gallery from "./pages/Gallery.jsx";
+import Admission from "./pages/Admission.jsx";
+import WhatsAppButton from "./components/WhatsAppButton.jsx";
 
 function App() {
   return (
