@@ -66,17 +66,17 @@ const About = () => {
           </div>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Shaping future officers with discipline, academic excellence, and physical fitness. 
-            Trusted by <strong className="text-[#B8860B]">2000+ parents and students</strong> across Rajasthan.
+            Trusted by <strong className="text-[#B8860B]">200+ parents and students</strong> across Rajasthan.
           </p>
         </motion.div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
           {[
-            { number: "15+", label: "Years of Excellence", icon: <FaTrophy /> },
-            { number: "2000+", label: "Students Trained", icon: <FaUsers /> },
-            { number: "500+", label: "Sainik Selections", icon: <FaMedal /> },
-            { number: "100+", label: "NDA Cadets", icon: <FaUserGraduate /> },
+            { number: "12+", label: "Years of Excellence", icon: <FaTrophy /> },
+            { number: "200+", label: "Students Trained", icon: <FaUsers /> },
+            { number: "50+", label: "Sainik Selections", icon: <FaMedal /> },
+            // { number: "100+", label: "NDA Cadets", icon: <FaUserGraduate /> },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -157,9 +157,9 @@ const About = () => {
           <h3 className="text-2xl font-bold text-center text-[#0B3B2C] mb-8">
             Our <span className="text-[#B8860B]">Facilities</span>
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              "Smart Classrooms",
+              // "Smart Classrooms",
               "Physical Training Ground",
               "Well-Stocked Library",
               "Computer Lab",

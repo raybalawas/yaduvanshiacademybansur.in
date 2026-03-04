@@ -153,38 +153,38 @@ const CoursesPage = () => {
     //   successRate: "90% selection rate (limited seats)",
     //   icon: <FaTrophy className="text-3xl" />
     // },
-    {
-      id: 5,
-      title: "NDA Foundation Course",
-      category: "nda",
-      image: ndaImage,
-      duration: "2-3 Years",
-      fee: "65,000 per year",
-      batchSize: "25-30 students",
-      ageGroup: "Class 8-10 students",
-      exam: "NDA Entrance Exam",
-      description: "Early foundation program for students from Class 8-10 aiming for National Defence Academy (NDA) after Class 12.",
-      features: [
-        "Mathematics foundation (Algebra, Calculus, Trigonometry)",
-        "English - Grammar, Vocabulary, Comprehension",
-        "General Studies - History, Geography, Polity, Economics",
-        "Current affairs & defence news",
-        "Physical training & sports",
-        "SSB interview orientation",
-        "Weekly tests & assessments"
-      ],
-      curriculum: [
-        "Mathematics - Complete foundation",
-        "English - Advanced language skills",
-        "General Studies - Comprehensive coverage",
-        "Current Affairs - Monthly updates",
-        "Physics & Chemistry basics"
-      ],
-      schedule: "Mon-Sat: 7:00 AM - 1:00 PM + Physical training",
-      faculty: "Subject experts with NDA coaching experience",
-      successRate: "70% progress to NDA coaching",
-      icon: <FaUserGraduate className="text-3xl" />
-    },
+    // {
+    //   id: 5,
+    //   title: "NDA Foundation Course",
+    //   category: "nda",
+    //   image: ndaImage,
+    //   duration: "2-3 Years",
+    //   fee: "65,000 per year",
+    //   batchSize: "25-30 students",
+    //   ageGroup: "Class 8-10 students",
+    //   exam: "NDA Entrance Exam",
+    //   description: "Early foundation program for students from Class 8-10 aiming for National Defence Academy (NDA) after Class 12.",
+    //   features: [
+    //     "Mathematics foundation (Algebra, Calculus, Trigonometry)",
+    //     "English - Grammar, Vocabulary, Comprehension",
+    //     "General Studies - History, Geography, Polity, Economics",
+    //     "Current affairs & defence news",
+    //     "Physical training & sports",
+    //     "SSB interview orientation",
+    //     "Weekly tests & assessments"
+    //   ],
+    //   curriculum: [
+    //     "Mathematics - Complete foundation",
+    //     "English - Advanced language skills",
+    //     "General Studies - Comprehensive coverage",
+    //     "Current Affairs - Monthly updates",
+    //     "Physics & Chemistry basics"
+    //   ],
+    //   schedule: "Mon-Sat: 7:00 AM - 1:00 PM + Physical training",
+    //   faculty: "Subject experts with NDA coaching experience",
+    //   successRate: "70% progress to NDA coaching",
+    //   icon: <FaUserGraduate className="text-3xl" />
+    // },
     // {
     //   id: 6,
     //   title: "SSB Interview Preparation",
@@ -256,8 +256,8 @@ const CoursesPage = () => {
     { id: "sainik", label: "Sainik School", icon: "🎯" },
     { id: "military", label: "Military School", icon: "🏛️" },
     { id: "rimc", label: "RIMC", icon: "⭐" },
-    { id: "nda", label: "NDA Foundation", icon: "📘" },
-    { id: "ssb", label: "SSB Interview", icon: "🗣️" },
+    // { id: "nda", label: "NDA Foundation", icon: "📘" },
+    // { id: "ssb", label: "SSB Interview", icon: "🗣️" },
     { id: "physical", label: "Physical Training", icon: "💪" }
   ];
 
@@ -286,7 +286,7 @@ const CoursesPage = () => {
             className="text-xl text-gray-200 max-w-3xl mx-auto"
           >
             Choose from our specialized coaching programs designed to crack 
-            Sainik School, Military School, RIMC, and NDA entrance examinations
+            Sainik School, Military School and RIMC  entrance examinations
           </motion.p>
         </div>
       </div>

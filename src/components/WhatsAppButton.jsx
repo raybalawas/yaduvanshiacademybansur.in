@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
     sainik: "Hello 👋, I want to know about Sainik School coaching for my child. Please share information about Class 6/9 admission, fees, and batch timings.",
     military: "Hello 👋, I'm interested in Military School (RMS) coaching. Can you provide details about the entrance exam preparation?",
     rimc: "Hello 👋, I want to know about RIMC coaching at your academy. Please share eligibility criteria and course details.",
-    nda: "Hello 👋, I'm interested in NDA foundation course. Can you share details about the curriculum, duration, and fees?",
+    // nda: "Hello 👋, I'm interested in NDA foundation course. Can you share details about the curriculum, duration, and fees?",
     physical: "Hello 👋, I want to know about physical training programs for defence exams. What all does it include?",
   };
 
@@ -111,8 +111,8 @@ const WhatsAppButton = () => {
                 { id: "sainik", label: "🎯 Sainik School", desc: "Class 6/9" },
                 { id: "military", label: "🏛️ Military School", desc: "RMS CET" },
                 { id: "rimc", label: "⭐ RIMC", desc: "Dehradun" },
-                { id: "nda", label: "📚 NDA", desc: "Foundation" },
-                { id: "physical", label: "💪 Physical", desc: "Training" },
+                // { id: "nda", label: "📚 NDA", desc: "Foundation" },
+                // { id: "physical", label: "💪 Physical", desc: "Training" },
               ].map((option) => (
                 <button
                   key={option.id}

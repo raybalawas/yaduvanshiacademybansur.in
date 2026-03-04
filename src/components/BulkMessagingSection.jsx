@@ -13,7 +13,7 @@ const courses = [
       "Doubt clearing sessions",
       "Previous years' question papers",
     ],
-    image: sainikImage,
+    image: militaryImage,
     duration: "1 Year Foundation Course",
   },
   {
@@ -29,19 +29,19 @@ const courses = [
     image: militaryImage,
     duration: "6 Months Intensive Program",
   },
-  {
-    name: "NDA Foundation Course",
-    description:
-      "Early preparation for NDA entrance exam for students from Class 8-10. Build strong fundamentals in Mathematics, English, and General Knowledge.",
-    features: [
-      "Mathematics foundation",
-      "English grammar & comprehension",
-      "Current affairs & GK",
-      "SSB interview basics",
-    ],
-    image: sainikImage,
-    duration: "2-3 Year Foundation Program",
-  },
+  // {
+  //   name: "NDA Foundation Course",
+  //   description:
+  //     "Early preparation for NDA entrance exam for students from Class 8-10. Build strong fundamentals in Mathematics, English, and General Knowledge.",
+  //   features: [
+  //     "Mathematics foundation",
+  //     "English grammar & comprehension",
+  //     "Current affairs & GK",
+  //     "SSB interview basics",
+  //   ],
+  //   image: sainikImage,
+  //   duration: "2-3 Year Foundation Program",
+  // },
   {
     name: "Physical Training & SSB Prep",
     description:
@@ -67,8 +67,8 @@ const CoursesSection = () => {
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-12">
           Explore our comprehensive coaching programs designed to prepare students for 
-          <span className="font-semibold"> Sainik School, Military School, RIMC, and NDA</span> entrance examinations.
-          Join 2000+ successful cadets who have achieved their dreams.
+          <span className="font-semibold"> Sainik School, Military School and RIMC</span> entrance examinations.
+          Join 200+ successful cadets who have achieved their dreams.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -108,17 +108,17 @@ const CoursesSection = () => {
           <h3 className="text-2xl font-bold mb-3">Why Choose Us?</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center">
-              <p className="text-2xl font-bold text-[#B8860B]">15+</p>
+              <p className="text-2xl font-bold text-[#B8860B]">10+</p>
               <p className="text-sm">Years Experience</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-[#B8860B]">500+</p>
+              <p className="text-2xl font-bold text-[#B8860B]">50+</p>
               <p className="text-sm">Sainik Selections</p>
             </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-[#B8860B]">100+</p>
+            {/* <div className="text-center">
+              <p className="text-2xl font-bold text-[#B8860B]">10+</p>
               <p className="text-sm">NDA Cadets</p>
-            </div>
+            </div> */}
             <div className="text-center">
               <p className="text-2xl font-bold text-[#B8860B]">20+</p>
               <p className="text-sm">Expert Faculty</p>

@@ -21,15 +21,15 @@ const StatsSection = () => {
   const stats = [
     {
       icon: <FaCalendarAlt className="text-3xl" />,
-      value: 15,
+      value: 12,
       suffix: "+",
       label: "Years of Excellence",
-      description: "Serving the nation since 2010",
+      description: "Serving the nation since 2014",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <FaUsers className="text-3xl" />,
-      value: 2000,
+      value: 200,
       suffix: "+",
       label: "Students Trained",
       description: "Young minds shaped for success",
@@ -37,7 +37,7 @@ const StatsSection = () => {
     },
     {
       icon: <FaSchool className="text-3xl" />,
-      value: 500,
+      value: 50,
       suffix: "+",
       label: "Sainik School Selections",
       description: "Students in various Sainik Schools",
@@ -45,9 +45,9 @@ const StatsSection = () => {
     },
     {
       icon: <FaMedal className="text-3xl" />,
-      value: 100,
+      value: 10,
       suffix: "+",
-      label: "NDA & Defence Selections",
+      label: "Defence Selections",
       description: "Serving in Armed Forces today",
       color: "from-red-500 to-red-600"
     }
@@ -83,7 +83,7 @@ const StatsSection = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             At <span className="font-semibold text-[#B8860B]">Yaduvanshi Academy Bansur</span>, 
             we combine academic excellence with military discipline to prepare students for 
-            <span className="font-semibold text-[#0B3B2C]"> Sainik School, Military School, RIMC, and NDA</span> entrance exams.
+            <span className="font-semibold text-[#0B3B2C]"> Sainik School, Military School, RIMC</span> entrance exams.
             Our proven track record speaks for itself.
           </p>
         </div>
@@ -135,12 +135,12 @@ const StatsSection = () => {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="mt-18 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {[
-            { icon: <FaStar />, text: "Trusted by 2000+ Parents", color: "text-yellow-500" },
+            { icon: <FaStar />, text: "Trusted by 500+ Parents", color: "text-yellow-500" },
             { icon: <FaShieldAlt />, text: "Govt. Recognized", color: "text-blue-500" },
-            { icon: <FaTrophy />, text: "15+ Years Excellence", color: "text-[#B8860B]" },
-            { icon: <FaUserGraduate />, text: "100+ NDA Cadets", color: "text-green-500" },
+            { icon: <FaTrophy />, text: "12+ Years Excellence", color: "text-[#B8860B]" },
+            // { icon: <FaUserGraduate />, text: "100+ NDA Cadets", color: "text-green-500" },
           ].map((badge, index) => (
             <div key={index} className="flex items-center justify-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-gray-100">
               <span className={`${badge.color}`}>{badge.icon}</span>
@@ -154,7 +154,7 @@ const StatsSection = () => {
           <div className="inline-flex items-center gap-3 bg-[#0B3B2C] text-white px-6 py-3 rounded-full shadow-lg">
             <FaStar className="text-[#B8860B]" />
             <span className="text-sm font-medium">
-              Trusted by parents & students across Rajasthan
+              Trusted by parents & students across Rajasthan & Haryana
             </span>
             <FaStar className="text-[#B8860B]" />
           </div>

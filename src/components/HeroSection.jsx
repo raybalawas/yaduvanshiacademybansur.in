@@ -25,7 +25,7 @@ const HeroSection = () => {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-[#B8860B] px-4 py-2 rounded-full mb-6 animate-pulse">
           <FaMedal className="text-white" />
-          <span className="text-sm font-semibold">ESTABLISHED 2010</span>
+          <span className="text-sm font-semibold">ESTABLISHED 2014</span>
         </div>
 
         {/* Main Heading */}
@@ -45,21 +45,21 @@ const HeroSection = () => {
         {/* Stats Strip */}
         <div className="mt-8 flex flex-wrap justify-center gap-6 md:gap-12">
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">15+</div>
+            <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">12+</div>
             <div className="text-xs md:text-sm text-gray-200">Years of Excellence</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">2000+</div>
+            <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">200+</div>
             <div className="text-xs md:text-sm text-gray-200">Students Trained</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">500+</div>
+            <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">50+</div>
             <div className="text-xs md:text-sm text-gray-200">Sainik Selections</div>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-[#B8860B]">100+</div>
             <div className="text-xs md:text-sm text-gray-200">NDA Cadets</div>
-          </div>
+          </div> */}
         </div>
 
         {/* CTA Buttons */}
