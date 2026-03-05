@@ -4,6 +4,7 @@ import StatsSection from "../components/StatsSection.jsx";
 import BulkMessagingSection from "../components/BulkMessagingSection.jsx";
 import SlideSection from "../components/SlideSection.jsx";
 // import PopupModal from '../components/PopupModal';
+import DirectorWords from "../components/DirectorWords.jsx";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <SlideSection />
       <StatsSection />
       <BulkMessagingSection />
+      <DirectorWords />
     </div>
   );
 };

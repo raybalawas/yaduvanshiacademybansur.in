@@ -9,7 +9,6 @@ import Gallery from "./pages/Gallery.jsx";
 import Admission from "./pages/Admission.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import TalentExamQR from "./pages/TalentExam.jsx";
-import SimpleQRCode from "./pages/QrCode.jsx";
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
               <Route path="/admission" element={<Admission />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/telent-search-exam" element={<TalentExamQR />} />
-              <Route path="/qr-code" element={<SimpleQRCode />} />
             </Routes>
           </main>
           <Footer />
