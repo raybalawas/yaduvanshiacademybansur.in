@@ -447,6 +447,7 @@ function TalentExam() {
                     <h4 className="font-semibold text-[#0B3B2C] mb-2">📅 Exam Schedule</h4>
                     <ul className="text-sm text-gray-600 space-y-1">
                       <li>• Registration closes: March 25, 2026</li>
+                      <li>• Exam Date: March 29, 2026</li>
                       <li>• Preliminary round: April 15, 2026</li>
                       <li>• Finals: April 30, 2026</li>
                     </ul>
