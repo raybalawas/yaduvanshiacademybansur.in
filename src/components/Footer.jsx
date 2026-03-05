@@ -13,6 +13,7 @@ import academyLogo from "../assets/yaduvashiAcademylogo.jpeg";
 
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import DirectorWords from "./DirectorWords";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -21,8 +22,10 @@ const Footer = () => {
     navigate(path);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   return (
+
+    <>
+    <DirectorWords />
     <footer className="bg-gradient-to-br from-[#0B3B2C] via-[#0f4a37] to-[#0B3B2C] text-gray-300 py-16 font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Logo & About */}
@@ -135,7 +138,6 @@ const Footer = () => {
             Facilities
           </h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            
             <li className="flex items-center gap-2">
               <span className="text-[#B8860B]">✓</span> Physical Training Ground
             </li>
@@ -195,10 +197,10 @@ const Footer = () => {
             <p className="flex items-center gap-3">
               <FaEnvelope className="text-[#B8860B] flex-shrink-0" />
               <a
-                href="mailto:defenceacademy@gmail.com"
+                href="mailto:yaduvanshiacademybansur@gmail.com"
                 className="hover:text-[#B8860B] transition"
               >
-                defenceacademy@gmail.com
+                yaduvanshiacademybansur@gmail.com
               </a>
             </p>
             <p className="flex items-center gap-3">
@@ -323,6 +325,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

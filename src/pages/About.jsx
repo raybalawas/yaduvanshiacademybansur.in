@@ -198,8 +198,8 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-[#B8860B]" />
-                <a href="mailto:defenceacademy@gmail.com" className="hover:text-[#B8860B]">
-                  defenceacademy@gmail.com
+                <a href="mailto:yaduvanshiacademybansur@gmail.com" className="hover:text-[#B8860B]">
+                  yaduvanshiacademybansur@gmail.com
                 </a>
               </div>
             </div>
