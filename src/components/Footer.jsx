@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
           <p className="text-sm text-gray-400 leading-relaxed mb-4">
             Shaping future officers with discipline, academic excellence, and
-            physical fitness. Trusted by 2000+ parents and students across
+            physical fitness. Trusted by 200+ parents and students across
             Rajasthan.
           </p>
           <div className="flex items-center text-sm text-gray-400">

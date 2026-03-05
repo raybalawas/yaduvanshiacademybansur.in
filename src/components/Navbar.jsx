@@ -27,6 +27,7 @@ const Navbar = () => {
     { name: "Courses", path: "/courses" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
+    { name: "Telent Exam", path: "/telent-search-exam" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -136,10 +137,10 @@ const Navbar = () => {
             <div className="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
               <p className="font-semibold text-[#0B3B2C] mb-2">Contact:</p>
               <a href="tel:+918949540232" className="block hover:text-[#B8860B] py-1">
-                📞 +91 ********
+                📞 +91 7725945908
               </a>
               <a href="tel:+919460129249" className="block hover:text-[#B8860B] py-1">
-                📞 +91 ********
+                📞 +91 8503998922
               </a>
             </div>
           </div>

@@ -28,7 +28,7 @@ const companyData = {
         </p>
         <ul className="list-disc list-inside text-left text-gray-700 space-y-1">
           <li>12+ years of excellence in defence education</li>
-          <li>500+ successful selections in Sainik Schools</li>
+          <li>50+ successful selections in Sainik Schools</li>
           <li>100+ cadets in NDA and other defence academies</li>
           <li>State-of-the-art infrastructure with sports facilities</li>
         </ul>
