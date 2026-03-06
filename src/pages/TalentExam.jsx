@@ -144,7 +144,7 @@ function TalentExam() {
 
   try {
     const API_URL = import.meta.env.VITE_API_URL || 
-      "https://yaduvanshiacademybansur-backend-q9wt4pydt-raybalawas-projects.vercel.app";
+      "https://yaduvanshiacademybansur-backend.vercel.app";
     
     const response = await axios.post(
       `${API_URL}/api/talent-exam/register`,
