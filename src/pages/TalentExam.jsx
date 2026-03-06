@@ -452,12 +452,12 @@ function TalentExam() {
                       disabled={isSubmitting}
                     >
                       <option value="">Select Your Class</option>
-                      <option value="5th">3rd Class</option>
-                      <option value="6th">4th Class</option>
-                      <option value="7th">5th Class</option>
-                      <option value="8th">6th Class</option>
-                      <option value="9th">7th Class</option>
-                      <option value="10th">8th Class</option>
+                      <option value="3rd">3rd Class</option>
+                      <option value="4th">4th Class</option>
+                      <option value="5th">5th Class</option>
+                      <option value="6th">6th Class</option>
+                      <option value="7th">7th Class</option>
+                      <option value="8th">8th Class</option>
                     </select>
                     {fieldErrors.class && (
                       <p className="text-sm text-red-600 mt-1">
