@@ -145,7 +145,7 @@ function TalentExam() {
     try {
       // Update this URL to match your backend server
       const response = await axios.post(
-        "http://localhost:5000/api/talent-exam/register",
+        "yaduvanshiacademybansur-backend-q9wt4pydt-raybalawas-projects.vercel.app/api/talent-exam/register",
         formData,
         {
           headers: {
