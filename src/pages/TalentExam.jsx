@@ -128,78 +128,95 @@ function TalentExam() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!validateForm()) {
-    Swal.fire({
-      icon: "error",
-      title: "Validation Error",
-      text: "Please fix the errors in the form",
-      confirmButtonColor: "#0B3B2C",
-    });
-    return;
-  }
-
-  setIsSubmitting(true);
-
-  try {
-    const API_URL = import.meta.env.VITE_API_URL || 
-      "https://yaduvanshiacademybansur-backend.vercel.app";
-    
-    const response = await axios.post(
-      `${API_URL}/api/talent-exam/register`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: false, // Set to false if you're not using cookies/auth
-      }
-    );
-
-    if (response.data.success) {
+    if (!validateForm()) {
       Swal.fire({
-        icon: "success",
-        title: "Success!",
-        text: "Your registration has been submitted successfully!",
+        icon: "error",
+        title: "Validation Error",
+        text: "Please fix the errors in the form",
         confirmButtonColor: "#0B3B2C",
       });
-
-      setFormData({
-        name: "",
-        fName: "",
-        phone: "",
-        class: "",
-        address: "",
-      });
-      setFieldErrors({});
-    }
-  } catch (error) {
-    console.error("Submission error:", error);
-    
-    let errorMessage = "An error occurred. Please try again.";
-    
-    if (error.response) {
-      errorMessage = error.response.data.message || "Failed to submit form";
-      console.error("Response status:", error.response.status);
-      console.error("Response data:", error.response.data);
-    } else if (error.request) {
-      errorMessage = "No response from server. Please check if backend is running.";
-      console.error("Request:", error.request);
-    } else {
-      errorMessage = error.message;
+      return;
     }
 
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: errorMessage,
-      confirmButtonColor: "#0B3B2C",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    setIsSubmitting(true);
+
+    try {
+      const API_URL =
+        import.meta.env.VITE_API_URL ||
+        "https://yaduvanshiacademybansur-backend.vercel.app";
+
+      const response = await axios.post(
+        `${API_URL}/api/talent-exam/register`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: false, // Set to false if you're not using cookies/auth
+        },
+      );
+
+      if (response.data.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Your registration has been submitted successfully!",
+          confirmButtonColor: "#0B3B2C",
+        });
+
+        setFormData({
+          name: "",
+          fName: "",
+          phone: "",
+          class: "",
+          address: "",
+        });
+        setFieldErrors({});
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+
+      let errorMessage = "An error occurred. Please try again.";
+
+      if (error.response) {
+        // The server responded with an error
+        errorMessage = error.response.data.message || "Failed to submit form";
+        console.error("Response status:", error.response.status);
+        console.error("Response data:", error.response.data);
+
+        // Show specific error
+        Swal.fire({
+          icon: "error",
+          title: `Error ${error.response.status}`,
+          text: errorMessage,
+          confirmButtonColor: "#0B3B2C",
+        });
+      } else if (error.request) {
+        // The request was made but no response was received
+        errorMessage =
+          "No response from server. Please check if backend is running.";
+        Swal.fire({
+          icon: "error",
+          title: "Connection Error",
+          text: errorMessage,
+          confirmButtonColor: "#0B3B2C",
+        });
+      } else {
+        // Something happened in setting up the request
+        errorMessage = error.message;
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: errorMessage,
+          confirmButtonColor: "#0B3B2C",
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const downloadQR = () => {
     const canvas = qrRef.current.querySelector("canvas");
     if (canvas) {
