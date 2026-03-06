@@ -136,8 +136,6 @@ function TalentExam() {
         title: "Validation Error",
         text: "Please fix the errors in the form",
         confirmButtonColor: "#0B3B2C",
-        background: "#fff",
-        backdrop: "rgba(11, 59, 44, 0.2)",
       });
       return;
     }
@@ -145,11 +143,16 @@ function TalentExam() {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post("/api/talent-exam/register", formData, {
-        headers: {
-          "Content-Type": "application/json",
+      // Update this URL to match your backend server
+      const response = await axios.post(
+        "http://localhost:5000/api/talent-exam/register",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-      });
+      );
 
       if (response.data.success) {
         Swal.fire({
@@ -157,10 +160,9 @@ function TalentExam() {
           title: "Success!",
           text: "Your registration has been submitted successfully!",
           confirmButtonColor: "#0B3B2C",
-          background: "#fff",
-          backdrop: "rgba(11, 59, 44, 0.2)",
         });
 
+        // Reset form
         setFormData({
           name: "",
           fName: "",
@@ -169,39 +171,25 @@ function TalentExam() {
           address: "",
         });
         setFieldErrors({});
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: response.data.message || "Something went wrong",
-          confirmButtonColor: "#0B3B2C",
-        });
       }
     } catch (error) {
       console.error("Submission error:", error);
 
+      let errorMessage = "An error occurred. Please try again.";
+
       if (error.response) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: error.response.data.message || "Failed to submit form",
-          confirmButtonColor: "#0B3B2C",
-        });
+        errorMessage = error.response.data.message || "Failed to submit form";
       } else if (error.request) {
-        Swal.fire({
-          icon: "error",
-          title: "Connection Error",
-          text: "No response from server. Please try again.",
-          confirmButtonColor: "#0B3B2C",
-        });
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "An error occurred. Please try again.",
-          confirmButtonColor: "#0B3B2C",
-        });
+        errorMessage =
+          "No response from server. Please check if backend is running.";
       }
+
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: errorMessage,
+        confirmButtonColor: "#0B3B2C",
+      });
     } finally {
       setIsSubmitting(false);
     }
