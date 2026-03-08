@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import TalentExamAdmitCard from "./TalentExamAdmitCard";
 import { QRCodeCanvas } from "qrcode.react";
 import {
   Download,
@@ -266,6 +267,15 @@ function TalentExam() {
     }
   };
 
+  /*Admit card logic*/
+  const now = new Date();
+
+  const startDate = new Date("2026-03-07T00:00:00");
+  const endDate = new Date("2026-03-27T12:00:00");
+
+  const isAdmitCardAvailable = now >= startDate && now <= endDate;
+
+  /*Admit card logic*/
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
       {/* Hero Section with Dark Green Theme */}
@@ -320,6 +330,18 @@ function TalentExam() {
             >
               Registration Form
             </button>
+            {isAdmitCardAvailable && (
+              <button
+                onClick={() => setActiveTab("admit")}
+                className={`px-6 py-2 rounded-md font-medium transition-all ${
+                  activeTab === "admit"
+                    ? "bg-[#0B3B2C] text-white"
+                    : "text-gray-600 hover:text-[#0B3B2C]"
+                }`}
+              >
+                Admit Card
+              </button>
+            )}
             <button
               onClick={() => setActiveTab("qr")}
               className={`px-6 py-2 rounded-md font-medium transition-all ${
