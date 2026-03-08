@@ -70,11 +70,11 @@ const TalentExamAdmitCard = () => {
             onClick={fetchAdmitCard}
             disabled={loading}
             className={`px-6 py-3 rounded-lg font-semibold transition text-white
-    ${
-      loading
-        ? "bg-gray-400 cursor-not-allowed"
-        : "bg-green-800 hover:bg-green-900 cursor-pointer"
-    }`}
+            ${
+            loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-green-800 hover:bg-green-900 cursor-pointer"
+            }`}
           >
             {loading ? "Generating..." : "Download Admit Card"}
           </button>

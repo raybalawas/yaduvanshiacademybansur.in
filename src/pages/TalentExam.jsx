@@ -270,7 +270,7 @@ function TalentExam() {
   /*Admit card logic*/
   const now = new Date();
 
-  const startDate = new Date("2026-03-07T00:00:00");
+  const startDate = new Date("2026-03-25T00:00:00");
   const endDate = new Date("2026-03-27T12:00:00");
 
   const isAdmitCardAvailable = now >= startDate && now <= endDate;
@@ -330,7 +330,7 @@ function TalentExam() {
             >
               Registration Form
             </button>
-            {isAdmitCardAvailable && (
+            {isAdmitCardAvailable ? (
               <button
                 onClick={() => setActiveTab("admit")}
                 className={`px-6 py-2 rounded-md font-medium transition-all ${
@@ -341,7 +341,7 @@ function TalentExam() {
               >
                 Admit Card
               </button>
-            )}
+            ) : null}
             <button
               onClick={() => setActiveTab("qr")}
               className={`px-6 py-2 rounded-md font-medium transition-all ${
