@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -6,6 +6,16 @@ const TalentExamAdmitCard = () => {
   const [phone, setPhone] = useState("");
   const [student, setStudent] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const now = new Date();
+    const start = new Date("2026-03-25T00:00:00");
+    const end = new Date("2026-03-27T12:00:00");
+
+    if (now < start || now > end) {
+      alert("Admit card download is not available yet.");
+    }
+  }, []);
 
   const fetchAdmitCard = async () => {
     try {
@@ -58,7 +68,13 @@ const TalentExamAdmitCard = () => {
 
           <button
             onClick={fetchAdmitCard}
-            className="bg-green-800 hover:bg-green-900 text-white px-6 py-3 rounded-lg font-semibold transition"
+            disabled={loading}
+            className={`px-6 py-3 rounded-lg font-semibold transition text-white
+    ${
+      loading
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-green-800 hover:bg-green-900 cursor-pointer"
+    }`}
           >
             {loading ? "Generating..." : "Download Admit Card"}
           </button>
