@@ -635,7 +635,7 @@ function TalentExam() {
             </div>
           </div>
         )}
-
+        {activeTab === "admit" && <TalentExamAdmitCard />}
         {/* QR Code Tab */}
         {activeTab === "qr" && (
           <div className="grid lg:grid-cols-2 gap-8">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const TalentExamAdmitCard = () => {
   const [phone, setPhone] = useState("");
@@ -29,7 +30,7 @@ const TalentExamAdmitCard = () => {
 
       setLoading(false);
     } catch (err) {
-      alert("No registration found for this number.");
+      Swal.error("No registration found for this number.");
       setLoading(false);
     }
   };
