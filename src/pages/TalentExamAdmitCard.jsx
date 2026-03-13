@@ -23,7 +23,7 @@ const TalentExamAdmitCard = () => {
       const API_URL =
         import.meta.env.VITE_API_URL ||
         "https://yaduvanshiacademybansur-backend.vercel.app";
-// https://yaduvanshiacademybansur-backend.vercel.app/api/talent-exam/admit-card
+      // https://yaduvanshiacademybansur-backend.vercel.app/api/talent-exam/admit-card
       const res = await axios.post(
         `${API_URL}/api/talent-exam/admit-card`,
         { phone },
@@ -62,8 +62,18 @@ const TalentExamAdmitCard = () => {
             type="text"
             placeholder="Enter Registered Phone Number"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            // onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => {
+              let value = e.target.value.replace(/\D/g, ""); // allow only digits
+              if (value.length <= 10) {
+                setPhone(value);
+              }
+            }}
             className="border border-gray-300 rounded-lg px-4 py-3 w-full md:w-2/3 focus:outline-none focus:ring-2 focus:ring-green-700"
+            maxLength="10"
+            inputMode="numeric"
+            pattern="[6-9]{1}[0-9]{9}"
+            required
           />
 
           <button
@@ -71,7 +81,7 @@ const TalentExamAdmitCard = () => {
             disabled={loading}
             className={`px-6 py-3 rounded-lg font-semibold transition text-white
             ${
-            loading
+              loading
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-green-800 hover:bg-green-900 cursor-pointer"
             }`}
