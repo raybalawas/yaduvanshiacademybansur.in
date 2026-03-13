@@ -270,7 +270,7 @@ function TalentExam() {
   /*Admit card logic*/
   const now = new Date();
 
-  const startDate = new Date("2026-03-25T00:00:00");
+  const startDate = new Date("2026-03-12T00:00:00");
   const endDate = new Date("2026-03-27T12:00:00");
 
   const isAdmitCardAvailable = now >= startDate && now <= endDate;
