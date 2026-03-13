@@ -23,9 +23,9 @@ const TalentExamAdmitCard = () => {
       const API_URL =
         import.meta.env.VITE_API_URL ||
         "https://yaduvanshiacademybansur-backend.vercel.app";
-
+// https://yaduvanshiacademybansur-backend.vercel.app/api/talent-exam/admit-card
       const res = await axios.post(
-        `${API_URL}/api/admit-card`,
+        `${API_URL}/api/talent-exam/admit-card`,
         { phone },
         { responseType: "blob" },
       );
