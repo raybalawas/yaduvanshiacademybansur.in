@@ -9,12 +9,12 @@ const TalentExamAdmitCard = () => {
 
   useEffect(() => {
     const now = new Date();
-    const start = new Date("2026-03-25T00:00:00");
+    const start = new Date("2026-03-12T00:00:00");
     const end = new Date("2026-03-27T12:00:00");
 
-    if (now < start || now > end) {
-      alert("Admit card download is not available yet.");
-    }
+    // if (now < start || now > end) {
+    //   alert("Admit card download is not available yet.");
+    // }
   }, []);
 
   const fetchAdmitCard = async () => {
