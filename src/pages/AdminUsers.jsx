@@ -22,15 +22,7 @@ const AdminUsers = () => {
       );
 
       if (res.data.success) {
-        const chunkSize = 10;
-        const chunks = [];
-
-        for (let i = 0; i < res.data.data.length; i += chunkSize) {
-          chunks.push(res.data.data.slice(i, i + chunkSize));
-        }
-
-        setStudents(chunks[0]); // first 10
-        setStudentChunks(chunks); // store all chunks
+        setStudents(res.data.data);
       }
     } catch (error) {
       console.error("API Error:", error);
@@ -126,11 +118,13 @@ const AdminUsers = () => {
           <table className="w-full border border-gray-300">
             <thead className="bg-gray-200">
               <tr>
-                <th className="border p-2">Name</th>
+                {/* <a href=""> */}
+                  <th className="border p-2">Name</th>
+                {/* </a> */}
+
                 <th className="border p-2">Father</th>
                 <th className="border p-2">Phone</th>
                 <th className="border p-2">Class</th>
-                <th className="border p-2">Address</th>
                 {/* <th className="border p-2">Status</th> */}
                 <th className="border p-2">Action</th>
               </tr>
@@ -143,7 +137,6 @@ const AdminUsers = () => {
                   <td className="border p-2">{student.fName}</td>
                   <td className="border p-2">{student.phone}</td>
                   <td className="border p-2">{student.class}</td>
-                  <td className="border p-2">{student.address}</td>
                   {/* <td className="border p-2">{student.status}</td> */}
 
                   <td className="border p-2">
