@@ -22,7 +22,15 @@ const AdminUsers = () => {
       );
 
       if (res.data.success) {
-        setStudents(res.data.data);
+        const chunkSize = 10;
+        const chunks = [];
+
+        for (let i = 0; i < res.data.data.length; i += chunkSize) {
+          chunks.push(res.data.data.slice(i, i + chunkSize));
+        }
+
+        setStudents(chunks[0]); // first 10
+        setStudentChunks(chunks); // store all chunks
       }
     } catch (error) {
       console.error("API Error:", error);
@@ -122,7 +130,8 @@ const AdminUsers = () => {
                 <th className="border p-2">Father</th>
                 <th className="border p-2">Phone</th>
                 <th className="border p-2">Class</th>
-                <th className="border p-2">Status</th>
+                <th className="border p-2">Address</th>
+                {/* <th className="border p-2">Status</th> */}
                 <th className="border p-2">Action</th>
               </tr>
             </thead>
@@ -134,12 +143,13 @@ const AdminUsers = () => {
                   <td className="border p-2">{student.fName}</td>
                   <td className="border p-2">{student.phone}</td>
                   <td className="border p-2">{student.class}</td>
-                  <td className="border p-2">{student.status}</td>
+                  <td className="border p-2">{student.address}</td>
+                  {/* <td className="border p-2">{student.status}</td> */}
 
                   <td className="border p-2">
                     <button
                       onClick={() => generateAdmitCard(student.phone)}
-                      className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded"
+                      className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded cursor-pointer"
                     >
                       Admit Card
                     </button>
