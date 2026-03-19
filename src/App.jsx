@@ -14,10 +14,7 @@ import TalentExamQR from "./pages/TalentExam";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminUsers from "./pages/AdminUsers.jsx";
 import AdminLogin from "./pages/AdminLogin.jsx";
-<<<<<<< HEAD
-=======
 import AdminRegister from "./pages/AdminRegister.jsx";
->>>>>>> f2a816f (git updated from monika branch)
 import AdminProtectedRoute from "./admin/components/AdminProtectedRoute.jsx";
 function App() {
   return (
@@ -35,7 +32,6 @@ function App() {
           <Route path="/telent-search-exam" element={<TalentExamQR />} />
         </Route>
 
-<<<<<<< HEAD
         {/* ADMIN PANEL */}
         <Route element={<AdminLayout />}>
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
@@ -44,7 +40,7 @@ function App() {
           
         </Route>
 
-=======
+
         {/* ADMIN LOGIN WITHOUT SIDEBAR */}
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-register" element={<AdminRegister />} />
@@ -71,7 +67,7 @@ function App() {
 
 
 
->>>>>>> f2a816f (git updated from monika branch)
+
       </Routes>
     </BrowserRouter>
   );
