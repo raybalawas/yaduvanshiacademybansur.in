@@ -50,17 +50,17 @@ function App() {
           <Route
             path="/admin-dashboard"
             element={
-              <AdminProtectedRoute>
+              // <AdminProtectedRoute>
                 <AdminDashboard />
-              </AdminProtectedRoute>
+              // </AdminProtectedRoute>
             }
           />
           <Route
             path="/admin-users"
             element={
-              <AdminProtectedRoute>
+              // <AdminProtectedRoute>
                 <AdminUsers />
-              </AdminProtectedRoute>
+              // </AdminProtectedRoute>
             }
           />
         </Route>

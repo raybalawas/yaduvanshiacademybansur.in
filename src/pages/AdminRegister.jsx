@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/yaduvashiAcademylogo.jpeg";
 
-const AdminRegister = () => {
+
+const AdminLogin = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -12,15 +14,15 @@ const AdminRegister = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/register", {
+      const res = await axios.post("http://localhost:5000/api/admin/login", {
         email,
         password,
       });
 
       localStorage.setItem("adminToken", res.data.token);
-      navigate("/admin-login");
+      navigate("/admin-dashboard");
     } catch (err) {
-      alert(err.response?.data?.message || "Registration failed");
+      alert(err.response?.data?.message || "Login failed");
     }
   };
 
@@ -32,7 +34,7 @@ const AdminRegister = () => {
         <div className="hidden md:flex flex-col justify-center px-10 py-14 text-white bg-gradient-to-b from-[#064e3b] to-[#0b5d47]">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden">
-              <img src="src/assets/yaduvashiAcademylogo.jpeg" alt="Logo" className="w-full h-full object-cover" />
+              <img src={logo} alt="Logo" className="w-full h-full object-cover" />
             </div>
 
             <div>
@@ -130,7 +132,7 @@ const AdminRegister = () => {
                 type="submit"
                 className="w-full rounded-xl bg-[#c89211] hover:bg-[#b8840f] text-white font-bold text-lg py-3 shadow-lg transition duration-300"
               >
-                Register
+                Registration
               </button>
             </form>
 
@@ -144,4 +146,4 @@ const AdminRegister = () => {
   );
 };
 
-export default AdminRegister;
+export default AdminLogin;

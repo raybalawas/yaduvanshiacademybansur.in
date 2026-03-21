@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/yaduvashiAcademylogo.jpeg";
+
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -18,10 +20,6 @@ const AdminLogin = () => {
       });
 
       localStorage.setItem("adminToken", res.data.token);
-<<<<<<< HEAD
-
-=======
->>>>>>> f2a816f (git updated from monika branch)
       navigate("/admin-dashboard");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
@@ -29,43 +27,6 @@ const AdminLogin = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="h-screen flex items-center justify-center bg-gray-100">
-
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow w-[400px]"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          Admin Login
-        </h2>
-
-        <input
-          type="email"
-          placeholder="Admin Email"
-          className="w-full border p-2 mb-4"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full border p-2 mb-4"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        <button
-          className="w-full bg-indigo-600 text-white p-2 rounded"
-        >
-          Login
-        </button>
-
-      </form>
-=======
     <div className="min-h-screen bg-gradient-to-br from-[#0b4f3f] via-[#2f6b59] to-[#4b7f68] flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-5xl grid md:grid-cols-2 overflow-hidden rounded-3xl shadow-2xl bg-white/10 backdrop-blur-md border border-white/20">
         
@@ -73,7 +34,7 @@ const AdminLogin = () => {
         <div className="hidden md:flex flex-col justify-center px-10 py-14 text-white bg-gradient-to-b from-[#064e3b] to-[#0b5d47]">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden">
-              <img src="src/assets/yaduvashiAcademylogo.jpeg" alt="Logo" className="w-full h-full object-cover" />
+              <img src={logo} alt="Logo" className="w-full h-full object-cover" />
             </div>
 
             <div>
@@ -181,7 +142,6 @@ const AdminLogin = () => {
           </div>
         </div>
       </div>
->>>>>>> f2a816f (git updated from monika branch)
     </div>
   );
 };
