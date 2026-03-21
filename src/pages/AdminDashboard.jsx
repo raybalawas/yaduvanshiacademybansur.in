@@ -3,28 +3,38 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const AdminDashboard = () => {
-  const [data, setData] = useState(null);
+  const [stats, setStats] = useState({
+    totalUsers: 0,
+    talentExamStudents: 0,
+  });
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProtectedData = async () => {
+    const fetchDashboardStats = async () => {
       const token = localStorage.getItem("adminToken");
+
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/protected", {
+        const res = await axios.get("http://localhost:5000/api/admin/dashboard-stats", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        setData(res.data);
+
+        setStats({
+          totalUsers: res.data.totalUsers || 0,
+          talentExamStudents: res.data.talentExamStudents || 0,
+        });
       } catch (err) {
-        console.error("Not authorized:", err.response?.data || err.message);
-        alert(err.response?.data?.message || "Invalid credentials");
+        console.error("Dashboard error:", err.response?.data || err.message);
         localStorage.removeItem("adminToken");
-        navigate("/admin-login");
+        // navigate("/admin-login");
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchProtectedData();
+    fetchDashboardStats();
   }, [navigate]);
 
   const handleLogout = () => {
@@ -32,29 +42,49 @@ const AdminDashboard = () => {
     navigate("/admin-login");
   };
 
-  return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
-        >
-          Logout
-        </button>
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center">
+        <p className="text-gray-600 text-lg">Loading dashboard...</p>
       </div>
+    );
+  }
 
-      {data ? (
-        <div className="bg-white shadow p-6 rounded">
-          <h2 className="text-xl font-semibold mb-2 text-indigo-700">👤 Admin Info</h2>
-          <p><strong>Email:</strong> {data.admin.email}</p>
-          <p><strong>ID:</strong> {data.admin._id}</p>
-          <hr className="my-4" />
-          <p className="text-green-600">{data.message}</p>
+  return (
+    <div className="min-h-screen bg-[#f8fafc] p-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-[#1f2937]">Dashboard</h1>
+            <p className="text-gray-500 mt-1">Admin overview</p>
+          </div>
+
+          <button
+            onClick={handleLogout}
+            className="bg-[#0f766e] hover:bg-[#115e59] text-white px-4 py-2 rounded-lg"
+          >
+            Logout
+          </button>
         </div>
-      ) : (
-        <p>Loading or not authorized...</p>
-      )}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <p className="text-sm text-gray-500 mb-2">Total Users</p>
+            <h2 className="text-3xl font-bold text-[#111827]">
+              {stats.totalUsers}
+            </h2>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+            <p className="text-sm text-gray-500 mb-2">
+              Talent Search Exam Students
+            </p>
+            <h2 className="text-3xl font-bold text-[#111827]">
+              {stats.talentExamStudents}
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
