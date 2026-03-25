@@ -149,7 +149,7 @@ const AdminUsers = () => {
         {/* Header */}
         <div className="bg-gradient-to-r from-[#0B3B2C] to-[#1a5a3a] px-6 py-4">
           <h1 className="text-2xl font-bold text-white">
-            Talent Exam Registrations
+            Talent Search Exam Students
           </h1>
           <p className="text-gray-200 text-sm mt-1">
             Manage and generate admit cards for registered students
