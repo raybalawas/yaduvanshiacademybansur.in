@@ -1,25 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const AdminSidebar = () => {
-  return (
-    <div className="w-[250px] h-screen bg-gray-900 text-white p-6">
+  const location = useLocation();
 
-      <h2 className="text-xl font-bold mb-8">
+  const menuItems = [
+    { name: "Dashboard", path: "/admin-dashboard" },
+    { name: "Users", path: "/admin-users" },
+  ];
+
+  return (
+    <div className="w-[240px] min-h-screen bg-white border-r border-gray-200 p-6">
+      <h2 className="text-2xl font-bold text-[#1f2937] mb-8">
         Admin Panel
       </h2>
 
-      <nav className="flex flex-col gap-4">
+      <nav className="flex flex-col gap-3">
+        {menuItems.map((item) => {
+          const isActive = location.pathname === item.path;
 
-        <Link to="/admin-dashboard">Dashboard</Link>
-
-        <Link to="/admin-users">Users</Link>
-
-        <Link to="/admin-courses">Courses</Link>
-
-        <Link to="/admin-gallery">Gallery</Link>
-
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`px-4 py-3 rounded-lg transition ${
+                isActive
+                  ? "bg-[#e6fffb] text-[#0f766e] font-semibold"
+                  : "text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {item.name}
+            </Link>
+          );
+        })}
       </nav>
-
     </div>
   );
 };

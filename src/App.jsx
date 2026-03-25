@@ -14,6 +14,7 @@ import TalentExamQR from "./pages/TalentExam";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminUsers from "./pages/AdminUsers.jsx";
 import AdminLogin from "./pages/AdminLogin.jsx";
+import AdminRegister from "./pages/AdminRegister.jsx";
 import AdminProtectedRoute from "./admin/components/AdminProtectedRoute.jsx";
 function App() {
   return (
@@ -38,6 +39,34 @@ function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           
         </Route>
+
+
+        {/* ADMIN LOGIN WITHOUT SIDEBAR */}
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-register" element={<AdminRegister />} />
+
+        {/* ADMIN PANEL */}
+        <Route element={<AdminLayout />}>
+          <Route
+            path="/admin-dashboard"
+            element={
+              // <AdminProtectedRoute>
+                <AdminDashboard />
+              // </AdminProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin-users"
+            element={
+              // <AdminProtectedRoute>
+                <AdminUsers />
+              // </AdminProtectedRoute>
+            }
+          />
+        </Route>
+
+
+
 
       </Routes>
     </BrowserRouter>

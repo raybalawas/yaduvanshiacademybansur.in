@@ -92,7 +92,7 @@ const AdminLogin = () => {
 
             <div className="text-center mb-8">
               <h2 className="text-4xl font-extrabold text-[#0b4f3f] mb-2">
-                Admin Login
+                Admin Registration
               </h2>
               <p className="text-gray-500 text-sm">
                 Please enter your credentials to continue
@@ -132,7 +132,7 @@ const AdminLogin = () => {
                 type="submit"
                 className="w-full rounded-xl bg-[#c89211] hover:bg-[#b8840f] text-white font-bold text-lg py-3 shadow-lg transition duration-300"
               >
-                Login
+                Registration
               </button>
             </form>
 
