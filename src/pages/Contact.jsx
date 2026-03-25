@@ -1,81 +1,21 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
-import { 
-  FaMapMarkerAlt, 
-  FaPhone, 
-  FaEnvelope, 
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
   FaClock,
   FaWhatsapp,
   FaFacebook,
   FaInstagram,
-  FaYoutube
+  FaYoutube,
+  FaCheckCircle,
+  FaGraduationCap,
+  FaMedal,
+  FaUsers,
+  FaCalendarAlt
 } from "react-icons/fa";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [fieldErrors, setFieldErrors] = useState({});
-  const [formError, setFormError] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitted(false);
-    setFormError("");
-    setFieldErrors({});
-
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        Swal.fire({
-          icon: "success",
-          title: "Submitted!",
-          text: data.message || "Your message has been sent successfully! We'll get back to you soon.",
-          confirmButtonColor: "#B8860B",
-        });
-      } else {
-        if (data.error) {
-          setFormError(data.error);
-        }
-        if (data.fieldErrors) {
-          setFieldErrors(data.fieldErrors);
-        }
-      }
-    } catch (error) {
-      setFormError("Server error: " + error.message);
-      Swal.fire({
-        icon: "error",
-        title: "Server Error",
-        text: "Something went wrong. Please try again or contact us directly.",
-        confirmButtonColor: "#B8860B",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -86,7 +26,8 @@ const Contact = () => {
             Get in <span className="text-[#B8860B]">Touch</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-            Have questions about our courses? We're here to help you on your journey to becoming a defence officer.
+            Have questions about our courses? We're here to help you on your
+            journey to becoming a defence officer.
           </p>
         </div>
       </div>
@@ -94,109 +35,165 @@ const Contact = () => {
       {/* Contact Section */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Left Column - Contact Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-            <h2 className="text-2xl font-bold text-[#0B3B2C] mb-6 pb-2 border-b-2 border-[#B8860B] inline-block">
-              Send us a Message
-            </h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Name Field */}
-              <div>
-                <label className="block text-gray-700 font-medium mb-2" htmlFor="name">
-                  Full Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  type="text"
-                  placeholder="Enter your full name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#B8860B] focus:border-transparent transition"
-                />
-                {fieldErrors.name && (
-                  <p className="text-sm text-red-600 mt-1">{fieldErrors.name}</p>
-                )}
+          {/* Left Column - Contact Information */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            {/* Decorative Top Bar */}
+            <div className="h-2 bg-gradient-to-r from-[#B8860B] to-[#0B3B2C]"></div>
+
+            <div className="p-6 md:p-8">
+              {/* Tagline Section */}
+              <div className="text-center mb-8">
+                <div className="inline-block bg-[#0B3B2C]/10 rounded-full px-4 py-1 mb-4">
+                  <span className="text-sm font-semibold text-[#B8860B]">
+                    ✦ CONNECT WITH US ✦
+                  </span>
+                </div>
+                <h2 className="text-3xl font-bold text-[#0B3B2C] mb-3">
+                  We're Here to Help
+                </h2>
+                <p className="text-gray-600 max-w-md mx-auto">
+                  Our dedicated team is ready to assist you with any questions
+                  about admissions, courses, or your journey to becoming a
+                  defence officer.
+                </p>
               </div>
 
-              {/* Email Field */}
-              <div>
-                <label className="block text-gray-700 font-medium mb-2" htmlFor="email">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  type="email"
-                  placeholder="you@example.com"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#B8860B] focus:border-transparent transition"
-                />
-                {fieldErrors.email && (
-                  <p className="text-sm text-red-600 mt-1">{fieldErrors.email}</p>
-                )}
-              </div>
+              {/* Contact Information */}
+              <div className="space-y-6">
+                {/* Phone Section */}
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                  <div className="bg-[#B8860B]/10 p-3 rounded-full">
+                    <FaPhone className="text-[#B8860B] text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#0B3B2C] text-lg mb-1">
+                      Call Us Directly
+                    </h3>
+                    <a
+                      href="tel:+917725945908"
+                      className="text-gray-700 hover:text-[#B8860B] transition block"
+                    >
+                      +91 77259 45908
+                    </a>
+                    <a
+                      href="tel:+918503998922"
+                      className="text-gray-700 hover:text-[#B8860B] transition block"
+                    >
+                      +91 8503998922
+                    </a>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Mon-Sat: 7:00 AM - 8:00 PM
+                    </p>
+                  </div>
+                </div>
 
-              {/* Phone Field */}
-              <div>
-                <label className="block text-gray-700 font-medium mb-2" htmlFor="phone">
-                  Phone Number
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  type="tel"
-                  placeholder="+91 77259 45908"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#B8860B] focus:border-transparent transition"
-                />
-              </div>
+                {/* WhatsApp Section */}
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                  <div className="bg-[#25D366]/10 p-3 rounded-full">
+                    <FaWhatsapp className="text-[#25D366] text-xl" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-[#0B3B2C] text-lg mb-1">
+                      WhatsApp Chat
+                    </h3>
+                    <a
+                      href="https://wa.me/917725945908"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-[#25D366] transition block"
+                    >
+                      +91 77259 45908
+                    </a>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Quick responses within 5 minutes
+                    </p>
+                    <a
+                      href="https://wa.me/917725945908?text=Hello%20👋%2C%20I'm%20interested%20in%20your%20defence%20coaching%20programs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-2 bg-[#25D366] hover:bg-[#20BA5C] text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+                    >
+                      Start WhatsApp Chat →
+                    </a>
+                  </div>
+                </div>
 
-              {/* Message Field */}
-              <div>
-                <label className="block text-gray-700 font-medium mb-2" htmlFor="message">
-                  Your Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  placeholder="Write your message here..."
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#B8860B] focus:border-transparent transition resize-none"
-                ></textarea>
-                {fieldErrors.message && (
-                  <p className="text-sm text-red-600 mt-1">{fieldErrors.message}</p>
-                )}
-              </div>
+                {/* Email Section */}
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                  <div className="bg-[#B8860B]/10 p-3 rounded-full">
+                    <FaEnvelope className="text-[#B8860B] text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#0B3B2C] text-lg mb-1">
+                      Send an Email
+                    </h3>
+                    <a
+                      href="mailto:info@yaduvanshiacademy.com"
+                      className="text-gray-700 hover:text-[#B8860B] transition block"
+                    >
+                      info@yaduvanshiacademy.com
+                    </a>
+                    <a
+                      href="mailto:admissions@yaduvanshiacademy.com"
+                      className="text-gray-700 hover:text-[#B8860B] transition block"
+                    >
+                      admissions@yaduvanshiacademy.com
+                    </a>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Response within 24 hours
+                    </p>
+                  </div>
+                </div>
 
-              {/* Submit Button */}
-              <div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full bg-[#B8860B] hover:bg-[#9E7008] text-white font-semibold px-8 py-3 rounded-lg transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5
-                    ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}
-                  `}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : (
-                    "Send Message"
-                  )}
-                </button>
+                {/* Address Section */}
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                  <div className="bg-[#B8860B]/10 p-3 rounded-full">
+                    <FaMapMarkerAlt className="text-[#B8860B] text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#0B3B2C] text-lg mb-1">
+                      Visit Our Campus
+                    </h3>
+                    <p className="text-gray-700">
+                      Yaduvanshi Academy Bansur,
+                      <br />
+                      Alwar Road, Near Kanhaiya Nagar,
+                      <br />
+                      Bansur, Rajasthan - 301402
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Monday - Saturday: 7:00 AM - 8:00 PM
+                      <br />
+                      Sunday: 8:00 AM - 2:00 PM
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quick Response Note */}
+                <div className="mt-6 pt-4 border-t border-gray-100">
+                  <div className="grid grid-cols-2 gap-3 text-center">
+                    <div className="bg-[#0B3B2C]/5 p-3 rounded-lg">
+                      <FaClock className="text-[#B8860B] mx-auto mb-2" />
+                      <p className="text-xs text-gray-600">
+                        Response within 24h
+                      </p>
+                    </div>
+                    <div className="bg-[#0B3B2C]/5 p-3 rounded-lg">
+                      <FaCheckCircle className="text-[#B8860B] mx-auto mb-2" />
+                      <p className="text-xs text-gray-600">Free Counseling</p>
+                    </div>
+                    <div className="bg-[#0B3B2C]/5 p-3 rounded-lg">
+                      <FaGraduationCap className="text-[#B8860B] mx-auto mb-2" />
+                      <p className="text-xs text-gray-600">Scholarship Guide</p>
+                    </div>
+                    <div className="bg-[#0B3B2C]/5 p-3 rounded-lg">
+                      <FaMedal className="text-[#B8860B] mx-auto mb-2" />
+                      <p className="text-xs text-gray-600">Expert Guidance</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
 
           {/* Right Column - Map & Contact Details */}
@@ -216,79 +213,24 @@ const Contact = () => {
               ></iframe>
             </div>
 
-            {/* Contact Details Cards */}
+            {/* Why Choose Us Section */}
             <div className="bg-white rounded-2xl shadow-xl p-6">
               <h3 className="text-xl font-bold text-[#0B3B2C] mb-4 pb-2 border-b-2 border-[#B8860B] inline-block">
-                Contact Information
+                Why Choose Yaduvanshi Academy?
               </h3>
               
-              <div className="space-y-4">
-                {/* Address */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-[#B8860B]/10 p-3 rounded-lg">
-                    <FaMapMarkerAlt className="text-[#B8860B] text-xl" />
+              <div className="space-y-3 mt-4">
+                {[
+                  { icon: <FaMedal />, text: "15+ Years of Excellence in Defence Education" },
+                  { icon: <FaUsers />, text: "2000+ Students Successfully Trained" },
+                  { icon: <FaGraduationCap />, text: "500+ Sainik School Selections" },
+                  { icon: <FaCalendarAlt />, text: "100+ NDA Cadets Serving the Nation" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="text-[#B8860B] text-xl">{item.icon}</div>
+                    <p className="text-gray-700 text-sm font-medium">{item.text}</p>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">Address</p>
-                    <p className="text-gray-600 text-sm">
-                      Yaduvanshi Academy Bansur,<br />
-                      Alwar Road, Near Kanhaiya Nagar,<br />
-                      Bansur, Rajasthan - 301402
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-[#B8860B]/10 p-3 rounded-lg">
-                    <FaPhone className="text-[#B8860B] text-xl" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">Phone</p>
-                    <p className="text-gray-600 text-sm">
-                      <a href="tel:+917725945908" className="hover:text-[#B8860B] transition">
-                        +91 77259 45908
-                      </a>
-                      <br />
-                      <a href="tel:+918949540232" className="hover:text-[#B8860B] transition">
-                        +91 89495 40232
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-[#B8860B]/10 p-3 rounded-lg">
-                    <FaEnvelope className="text-[#B8860B] text-xl" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">Email</p>
-                    <p className="text-gray-600 text-sm">
-                      <a href="mailto:info@yaduvanshiacademy.com" className="hover:text-[#B8860B] transition">
-                        info@yaduvanshiacademy.com
-                      </a>
-                      <br />
-                      <a href="mailto:admissions@yaduvanshiacademy.com" className="hover:text-[#B8860B] transition">
-                        admissions@yaduvanshiacademy.com
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Hours */}
-                <div className="flex items-start gap-3">
-                  <div className="bg-[#B8860B]/10 p-3 rounded-lg">
-                    <FaClock className="text-[#B8860B] text-xl" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">Working Hours</p>
-                    <p className="text-gray-600 text-sm">
-                      Monday - Saturday: 7:00 AM - 8:00 PM<br />
-                      Sunday: 8:00 AM - 2:00 PM
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               {/* WhatsApp Button */}
@@ -314,6 +256,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition transform hover:scale-110"
+                  aria-label="Facebook"
                 >
                   <FaFacebook size={20} />
                 </a>
@@ -322,6 +265,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition transform hover:scale-110"
+                  aria-label="Instagram"
                 >
                   <FaInstagram size={20} />
                 </a>
@@ -330,6 +274,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition transform hover:scale-110"
+                  aria-label="YouTube"
                 >
                   <FaYoutube size={20} />
                 </a>
@@ -338,9 +283,13 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition transform hover:scale-110"
+                  aria-label="WhatsApp"
                 >
                   <FaWhatsapp size={20} />
                 </a>
+              </div>
+              <div className="text-center mt-4">
+                <p className="text-xs text-gray-500">Stay updated with latest news, events, and success stories</p>
               </div>
             </div>
           </div>
@@ -355,22 +304,58 @@ const Contact = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="p-4 border-l-4 border-[#B8860B] bg-gray-50 rounded-r-lg">
-              <h3 className="font-semibold text-gray-800 mb-2">What are your visiting hours?</h3>
-              <p className="text-gray-600 text-sm">You can visit us Monday to Saturday between 7 AM and 8 PM. Sunday 8 AM to 2 PM.</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                What are your visiting hours?
+              </h3>
+              <p className="text-gray-600 text-sm">
+                You can visit us Monday to Saturday between 7 AM and 8 PM.
+                Sunday 8 AM to 2 PM.
+              </p>
             </div>
             <div className="p-4 border-l-4 border-[#B8860B] bg-gray-50 rounded-r-lg">
-              <h3 className="font-semibold text-gray-800 mb-2">Do I need to book an appointment?</h3>
-              <p className="text-gray-600 text-sm">While walk-ins are welcome, we recommend booking an appointment for a dedicated counseling session.</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                Do I need to book an appointment?
+              </h3>
+              <p className="text-gray-600 text-sm">
+                While walk-ins are welcome, we recommend booking an appointment
+                for a dedicated counseling session.
+              </p>
             </div>
             <div className="p-4 border-l-4 border-[#B8860B] bg-gray-50 rounded-r-lg">
-              <h3 className="font-semibold text-gray-800 mb-2">How can I get admission?</h3>
-              <p className="text-gray-600 text-sm">Fill the contact form or call us directly. We'll guide you through the admission process.</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                How can I get admission?
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Call us directly or visit our campus. Our counselors will guide
+                you through the admission process.
+              </p>
             </div>
             <div className="p-4 border-l-4 border-[#B8860B] bg-gray-50 rounded-r-lg">
-              <h3 className="font-semibold text-gray-800 mb-2">Do you offer online counseling?</h3>
-              <p className="text-gray-600 text-sm">Yes, we offer online counseling via WhatsApp and video calls for outstation students.</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                Do you offer online counseling?
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Yes, we offer online counseling via WhatsApp and video calls for
+                outstation students.
+              </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Quick Contact Banner */}
+      <div className="bg-[#0B3B2C] py-8">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <p className="text-white text-lg mb-3">
+            📞 Need immediate assistance? Call us now!
+          </p>
+          <a 
+            href="tel:+917725945908"
+            className="inline-flex items-center gap-2 bg-[#B8860B] hover:bg-[#9E7008] text-white px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105"
+          >
+            <FaPhone />
+            +91 77259 45908
+          </a>
         </div>
       </div>
     </div>

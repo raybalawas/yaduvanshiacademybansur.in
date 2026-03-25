@@ -292,14 +292,14 @@ const AdmissionPage = () => {
               </div>
 
               {/* Online Registration Button */}
-              <div className="text-center mt-8">
+              {/* <div className="text-center mt-8">
                 <button
                   onClick={() => setShowForm(true)}
                   className="bg-[#B8860B] hover:bg-[#9E7008] text-white px-8 py-4 rounded-lg font-bold text-lg transition transform hover:scale-105 shadow-xl"
                 >
                   Apply Online Now
                 </button>
-              </div>
+              </div> */}
             </motion.div>
           )}
 
@@ -424,12 +424,12 @@ const AdmissionPage = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 bg-blue-50 p-4 rounded-lg">
+              {/* <div className="mt-6 bg-blue-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-600 flex items-center gap-2">
                   <FaDownload className="text-[#B8860B]" />
                   Download the document checklist for offline submission
                 </p>
-              </div>
+              </div> */}
             </motion.div>
           )}
 
