@@ -63,7 +63,7 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        {/* <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <Link
             to="/contact"
             className="px-8 py-4 bg-[#B8860B] hover:bg-[#9E7008] text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2 group"
@@ -81,7 +81,7 @@ const HeroSection = () => {
             <FaWhatsapp size={20} />
             Chat on WhatsApp
           </a>
-        </div> */}
+        </div>
 
         {/* Quick Contact */}
         <div className="mt-8 flex items-center justify-center gap-4 text-sm text-gray-200">
