@@ -73,7 +73,7 @@ const HeroSection = () => {
           </Link>
           
           <a
-            href="https://wa.me/918949540232?text=Hello%20👋%2C%20I'm%20interested%20in%20your%20defence%20coaching%20programs"
+            href="https://wa.me/917725945908?text=Hello%20👋%2C%20I'm%20interested%20in%20your%20defence%20coaching%20programs"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"

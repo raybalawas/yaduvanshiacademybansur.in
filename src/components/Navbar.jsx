@@ -136,10 +136,10 @@ const Navbar = () => {
             {/* Quick Contact in Mobile Menu */}
             <div className="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
               <p className="font-semibold text-[#0B3B2C] mb-2">Contact:</p>
-              <a href="tel:+918949540232" className="block hover:text-[#B8860B] py-1">
+              <a href="tel:+917725945908" className="block hover:text-[#B8860B] py-1">
                 📞 +91 7725945908
               </a>
-              <a href="tel:+919460129249" className="block hover:text-[#B8860B] py-1">
+              <a href="tel:+918503998922" className="block hover:text-[#B8860B] py-1">
                 📞 +91 8503998922
               </a>
             </div>
