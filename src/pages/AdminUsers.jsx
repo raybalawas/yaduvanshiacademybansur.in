@@ -19,8 +19,15 @@ const AdminUsers = () => {
 
   const fetchStudents = async () => {
     try {
+      const token = localStorage.getItem("adminToken"); // or "token" depending on your storage key
+
       const res = await axios.get(
-        "https://yaduvanshiacademybansur-backend-6xas4w19s-raybalawas-projects.vercel.app/api/talent-exam/registrations"
+        "https://yaduvanshiacademybansur-backend-6xas4w19s-raybalawas-projects.vercel.app/api/talent-exam/registrations",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
       );
 
       if (res.data.success) {
@@ -28,6 +35,11 @@ const AdminUsers = () => {
       }
     } catch (error) {
       console.error("API Error:", error);
+      if (error.response?.status === 401) {
+        alert("Session expired. Please login again.");
+        localStorage.removeItem("adminToken");
+        window.location.href = "/admin-login";
+      }
     } finally {
       setLoading(false);
     }
@@ -40,13 +52,13 @@ const AdminUsers = () => {
         { phone },
         {
           responseType: "blob",
-        }
+        },
       );
 
       const file = new Blob([res.data], { type: "application/pdf" });
       const fileURL = URL.createObjectURL(file);
       const newWindow = window.open(fileURL);
-      
+
       newWindow.onload = () => {
         newWindow.print();
       };
@@ -91,7 +103,7 @@ const AdminUsers = () => {
 
   // Filter students by search term
   const filteredStudents = students.filter((student) =>
-    student.name?.toLowerCase().includes(searchTerm.toLowerCase())
+    student.name?.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // Sort filtered students
@@ -102,7 +114,7 @@ const AdminUsers = () => {
   const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
   const currentStudents = sortedStudents.slice(
     indexOfFirstStudent,
-    indexOfLastStudent
+    indexOfLastStudent,
   );
 
   const totalPages = Math.ceil(sortedStudents.length / studentsPerPage);
@@ -111,7 +123,7 @@ const AdminUsers = () => {
   const getPageNumbers = () => {
     const maxPagesToShow = 5;
     const pageNumbers = [];
-    
+
     if (totalPages <= maxPagesToShow) {
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
@@ -119,22 +131,22 @@ const AdminUsers = () => {
     } else {
       const startPage = Math.max(1, currentPage - 2);
       const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
-      
+
       if (startPage > 1) {
         pageNumbers.push(1);
         if (startPage > 2) pageNumbers.push("...");
       }
-      
+
       for (let i = startPage; i <= endPage; i++) {
         pageNumbers.push(i);
       }
-      
+
       if (endPage < totalPages) {
         if (endPage < totalPages - 1) pageNumbers.push("...");
         pageNumbers.push(totalPages);
       }
     }
-    
+
     return pageNumbers;
   };
 
@@ -280,7 +292,10 @@ const AdminUsers = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="5" className="px-4 py-12 text-center text-gray-500">
+                      <td
+                        colSpan="5"
+                        className="px-4 py-12 text-center text-gray-500"
+                      >
                         <svg
                           className="mx-auto h-12 w-12 text-gray-400 mb-4"
                           fill="none"
@@ -316,7 +331,9 @@ const AdminUsers = () => {
                       {Math.min(indexOfLastStudent, sortedStudents.length)}
                     </span>{" "}
                     of{" "}
-                    <span className="font-semibold">{sortedStudents.length}</span>{" "}
+                    <span className="font-semibold">
+                      {sortedStudents.length}
+                    </span>{" "}
                     entries
                   </div>
 
@@ -332,13 +349,15 @@ const AdminUsers = () => {
                     {getPageNumbers().map((page, index) => (
                       <button
                         key={index}
-                        onClick={() => typeof page === "number" && setCurrentPage(page)}
+                        onClick={() =>
+                          typeof page === "number" && setCurrentPage(page)
+                        }
                         className={`px-3 py-1.5 rounded-md text-sm font-medium transition ${
                           currentPage === page
                             ? "bg-[#B8860B] text-white shadow-md"
                             : page === "..."
-                            ? "cursor-default bg-transparent"
-                            : "border border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
+                              ? "cursor-default bg-transparent"
+                              : "border border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
                         }`}
                         disabled={page === "..."}
                       >
