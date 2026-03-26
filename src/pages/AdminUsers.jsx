@@ -20,7 +20,7 @@ const AdminUsers = () => {
   const fetchStudents = async () => {
     try {
       const res = await axios.get(
-        "https://yaduvanshiacademybansur-backend.vercel.app/api/talent-exam/registrations"
+        "https://yaduvanshiacademybansur-backend-6xas4w19s-raybalawas-projects.vercel.app/api/talent-exam/registrations"
       );
 
       if (res.data.success) {
@@ -36,7 +36,7 @@ const AdminUsers = () => {
   const generateAdmitCard = async (phone) => {
     try {
       const res = await axios.post(
-        "https://yaduvanshiacademybansur-backend.vercel.app/api/talent-exam/admit-card",
+        "https://yaduvanshiacademybansur-backend-6xas4w19s-raybalawas-projects.vercel.app/api/talent-exam/admit-card",
         { phone },
         {
           responseType: "blob",
