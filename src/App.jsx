@@ -29,7 +29,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/telent-search-exam" element={<TalentExamQR />} />
+          {/* <Route path="/telent-search-exam" element={<TalentExamQR />} /> */}
         </Route>
 
         {/* ADMIN PANEL */}
