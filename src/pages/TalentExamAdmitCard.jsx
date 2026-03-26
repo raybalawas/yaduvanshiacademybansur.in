@@ -44,7 +44,7 @@ const TalentExamAdmitCard = () => {
     try {
       setLoading(true);
       const API_URL =
-        import.meta.env.VITE_API_URL || "https://yaduvanshiacademybansur-backend-6xas4w19s-raybalawas-projects.vercel.app/"
+        import.meta.env.VITE_API_URL || "https://yaduvanshiacademybansur-backend-6xas4w19s-raybalawas-projects.vercel.app"
 
         // "https://yaduvanshiacademybansur-backend.vercel.app";
       // https://yaduvanshiacademybansur-backend.vercel.app/api/talent-exam/admit-card
