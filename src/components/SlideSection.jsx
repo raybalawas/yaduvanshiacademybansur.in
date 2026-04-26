@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FaChevronLeft, 
-  FaChevronRight, 
-  FaPlay, 
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaPlay,
   FaPause,
   FaCircle,
-  FaExpand
-} from 'react-icons/fa';
+  FaExpand,
+} from "react-icons/fa";
 
 // Import your images (add these to your assets folder)
-import slide1 from '../assets/slides/campus1.jpg';
-import slide2 from '../assets/slides/training1.jpg';
-import slide3 from '../assets/slides/classroom1.jpg';
-import slide4 from '../assets/slides/event1.jpg';
-import slide5 from '../assets/slides/library.jpg';
-import slide6 from '../assets/slides/graduation.jpg';
+import slide1 from "../assets/slides/campus1.jpg";
+import slide2 from "../assets/slides/training1.jpg";
+import slide3 from "../assets/slides/classroom1.jpg";
+import slide4 from "../assets/slides/event1.jpg";
+import slide5 from "../assets/slides/library.jpg";
+import slide6 from "../assets/slides/graduation.jpg";
 
 const SlideSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,50 +29,56 @@ const SlideSection = () => {
       id: 1,
       image: slide1,
       title: "Yaduvanshi Academy Campus",
-      description: "State-of-the-art infrastructure spread across 5 acres",
-      date: "2025",
-      category: "Campus"
+      description:
+        "A disciplined learning environment with modern infrastructure spread across 5 acres",
+      // date: "2025",
+      // category: "Campus",
     },
     {
       id: 2,
       image: slide2,
       title: "Morning Physical Training",
-      description: "Cadets during daily PT session at 6 AM",
-      date: "2025",
-      category: "Training"
+      description:
+        "Daily 6 AM physical training to build stamina, discipline, and defence readiness",
+      // date: "2025",
+      // category: "Training",
     },
     {
       id: 3,
       image: slide3,
-      title: "Smart Classroom",
-      description: "Interactive learning with modern technology",
-      date: "2025",
-      category: "Facilities"
+      title: "Classroom",
+      description:
+        "Technology-driven classrooms designed for focused and interactive defence exam preparation",
+      // date: "2025",
+      // category: "Facilities",
     },
     {
       id: 4,
       image: slide4,
       title: "Annual Sports Day 2025",
-      description: "Students competing in various sports events",
-      date: "2025",
-      category: "Events"
+      description:
+        "Competitive sports events to develop leadership, teamwork, and physical excellence",
+      // date: "2025",
+      // category: "Events",
     },
     {
       id: 5,
       image: slide5,
       title: "Well-Stocked Library",
-      description: "Extensive collection of defence exam preparation books",
-      date: "2024",
-      category: "Facilities"
+      description:
+        "Comprehensive study resources tailored for Sainik School, RMS, and defence exams",
+      // date: "2024",
+      // category: "Facilities",
     },
     {
       id: 6,
       image: slide6,
       title: "Selection Celebration",
-      description: "Celebrating students who cleared Sainik School exam",
+      description:
+        "Recognizing and celebrating students selected in prestigious defence institutions",
       date: "2024",
-      category: "Events"
-    }
+      category: "Events",
+    },
   ];
 
   // Auto-play functionality
@@ -97,7 +103,7 @@ const SlideSection = () => {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -145,7 +151,7 @@ const SlideSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -153,20 +159,21 @@ const SlideSection = () => {
           >
             Campus <span className="text-[#B8860B]">Gallery</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            A glimpse into the life at Yaduvanshi Academy - where future defence officers are shaped
+            A glimpse into the life at Yaduvanshi Academy - where future defence
+            officers are shaped
           </motion.p>
         </div>
 
         {/* Main Slider Container */}
         <div className="relative group">
           {/* Main Slider */}
-          <div 
+          <div
             className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -268,9 +275,9 @@ const SlideSection = () => {
                 key={slide.id}
                 onClick={() => handleDotClick(index)}
                 className={`relative w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'ring-2 ring-[#B8860B] scale-110' 
-                    : 'opacity-60 hover:opacity-100'
+                  index === currentIndex
+                    ? "ring-2 ring-[#B8860B] scale-110"
+                    : "opacity-60 hover:opacity-100"
                 }`}
               >
                 <img
@@ -294,8 +301,8 @@ const SlideSection = () => {
                   size={12}
                   className={`transition-all duration-300 ${
                     index === currentIndex
-                      ? 'text-[#B8860B] scale-125'
-                      : 'text-gray-300 group-hover:text-gray-400'
+                      ? "text-[#B8860B] scale-125"
+                      : "text-gray-300 group-hover:text-gray-400"
                   }`}
                 />
               </button>
@@ -309,7 +316,7 @@ const SlideSection = () => {
             { number: "36+", label: "Photos", icon: "📸" },
             { number: "12", label: "Facilities", icon: "🏛️" },
             { number: "8", label: "Events", icon: "🎉" },
-            { number: "6", label: "Categories", icon: "📑" }
+            { number: "6", label: "Categories", icon: "📑" },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -319,7 +326,9 @@ const SlideSection = () => {
               className="bg-white p-4 rounded-xl shadow-md text-center"
             >
               <div className="text-3xl mb-2">{stat.icon}</div>
-              <div className="text-2xl font-bold text-[#B8860B]">{stat.number}</div>
+              <div className="text-2xl font-bold text-[#B8860B]">
+                {stat.number}
+              </div>
               <div className="text-sm text-gray-600">{stat.label}</div>
             </motion.div>
           ))}
