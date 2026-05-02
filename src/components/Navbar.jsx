@@ -28,6 +28,7 @@ const Navbar = () => {
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
     // { name: "Telent Exam", path: "/telent-search-exam" },
+    { name: "Telent Exam Result", path: "/result" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -77,7 +78,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            
+
             {/* Admission Button */}
             <Link
               to="/admission"
@@ -95,12 +96,32 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
@@ -123,7 +144,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            
+
             {/* Mobile Admission Button */}
             <Link
               to="/admission"
@@ -136,10 +157,16 @@ const Navbar = () => {
             {/* Quick Contact in Mobile Menu */}
             <div className="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
               <p className="font-semibold text-[#0B3B2C] mb-2">Contact:</p>
-              <a href="tel:+917725945908" className="block hover:text-[#B8860B] py-1">
+              <a
+                href="tel:+917725945908"
+                className="block hover:text-[#B8860B] py-1"
+              >
                 📞 +91 7725945908
               </a>
-              <a href="tel:+918503998922" className="block hover:text-[#B8860B] py-1">
+              <a
+                href="tel:+918503998922"
+                className="block hover:text-[#B8860B] py-1"
+              >
                 📞 +91 8503998922
               </a>
             </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaSchool, 
-  FaMedal, 
-  FaUsers, 
-  FaClock, 
-  FaMapMarkerAlt, 
-  FaPhoneAlt, 
+import {
+  FaSchool,
+  FaMedal,
+  FaUsers,
+  FaClock,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
   FaEnvelope,
   FaCheckCircle,
   FaTrophy,
@@ -25,7 +25,7 @@ const About = () => {
       <div className="relative bg-gradient-to-r from-[#0B3B2C] to-[#1a5a3a] text-white py-20">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -33,7 +33,7 @@ const About = () => {
           >
             National Defence Academy
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -47,7 +47,7 @@ const About = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Academy Introduction */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -65,7 +65,7 @@ const About = () => {
             </span>
           </div>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Shaping future officers with discipline, academic excellence, and physical fitness. 
+            Shaping future officers with discipline, academic excellence, and physical fitness.
             Trusted by <strong className="text-[#B8860B]">200+ parents and students</strong> across Rajasthan.
           </p>
         </motion.div>
@@ -74,9 +74,10 @@ const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
           {[
             { number: "12+", label: "Years of Excellence", icon: <FaTrophy /> },
-            { number: "200+", label: "Students Trained", icon: <FaUsers /> },
-            { number: "50+", label: "Sainik Selections", icon: <FaMedal /> },
-            // { number: "100+", label: "NDA Cadets", icon: <FaUserGraduate /> },
+            { number: "780+", label: "Students Trained", icon: <FaUsers /> },
+            { number: "220+", label: "Sainik Selections", icon: <FaMedal /> },
+            { number: "150+", label: "NAVODYA", icon: <FaUserGraduate /> },
+            { number: "10+", label: "MILITRY", icon: <FaUserGraduate /> },
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -221,9 +222,9 @@ const About = () => {
 
         {/* Map Section (Optional) */}
         <div className="mt-8 text-center">
-          <a 
-            href="https://www.google.com/maps/@27.696449,76.3787435,17.62z?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D" 
-            target="_blank" 
+          <a
+            href="https://www.google.com/maps/@27.696449,76.3787435,17.62z?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#B8860B] hover:text-[#0B3B2C] transition"
           >

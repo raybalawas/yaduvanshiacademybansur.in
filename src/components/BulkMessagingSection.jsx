@@ -37,20 +37,19 @@ const courses = [
   //     "Mathematics foundation",
   //     "English grammar & comprehension",
   //     "Current affairs & GK",
-  //     "SSB interview basics",
+  //
   //   ],
   //   image: sainikImage,
   //   duration: "2-3 Year Foundation Program",
   // },
   {
-    name: "Physical Training & SSB Prep",
-    description:
-      "Comprehensive physical training and Services Selection Board (SSB) interview preparation including psychology tests and group tasks.",
-    features: [
-      "Daily PT & drills",
-      "Running & endurance training",
-      "Psychology tests practice",
-      "GTO task training",
+    name: "NAVODAYA VIDYALAYA",
+    description:"Comprehensive coaching for Class 6 and Class 9 NAVODAYA VIDYALAYA entrance exams . Our proven methodology ensures success in Mathematics, Intelligence, Language .",
+    features: ["Subject-wise expert faculty",
+      "Weekly mock tests & practice papers",
+      "Doubt clearing sessions",
+      "Previous years' question papers",
+      
     ],
     image: militaryImage,
     duration: "3 Months Intensive",
@@ -66,7 +65,7 @@ const CoursesSection = () => {
           Our <span className="text-[#B8860B]">Defence Coaching Programs</span>
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-12">
-          Explore our comprehensive coaching programs designed to prepare students for 
+          Explore our comprehensive coaching programs designed to prepare students for
           <span className="font-semibold"> Sainik School, Military School and RIMC</span> entrance examinations.
           Join 200+ successful cadets who have achieved their dreams.
         </p>

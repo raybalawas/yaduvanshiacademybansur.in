@@ -6,12 +6,14 @@ const AdminSidebar = () => {
   const menuItems = [
     { name: "Dashboard", path: "/admin-dashboard" },
     { name: "Users", path: "/admin-users" },
+    { name: "Result", path: "/admin-upload-result" },
+    { name: "Result List", path: "/admin-uploaded-result-list" },
   ];
 
   return (
     <div className="w-[240px] min-h-screen bg-white border-r border-gray-200 p-6">
       <h2 className="text-2xl font-bold text-[#1f2937] mb-8">
-        Admin Panel
+        Yaduvanshi Academy
       </h2>
 
       <nav className="flex flex-col gap-3">
