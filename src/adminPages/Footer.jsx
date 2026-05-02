@@ -23,6 +23,7 @@ const Footer = () => {
   };
   return (
 
+    
     <>
     <footer className="bg-gradient-to-br from-[#0B3B2C] via-[#0f4a37] to-[#0B3B2C] text-gray-300 py-16 font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 gap-10">
