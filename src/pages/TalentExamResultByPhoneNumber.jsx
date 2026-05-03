@@ -1,52 +1,66 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { FaSearch, FaPhone, FaUser, FaUserTie, FaDownload, FaPrint } from 'react-icons/fa';
+import React, { useState } from "react";
+import axios from "axios";
+import {
+  FaSearch,
+  FaPhone,
+  FaUser,
+  FaUserTie,
+  FaDownload,
+  FaPrint,
+} from "react-icons/fa";
 
 const TalentExamResultByPhoneNumber = () => {
-  const [searchType, setSearchType] = useState('phone');
-  const [searchValue, setSearchValue] = useState('');
+  const [searchType, setSearchType] = useState("phone");
+  const [searchValue, setSearchValue] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [searched, setSearched] = useState(false);
 
-  const API_URL = 'https://yaduvanshi-backend.onrender.com';
+  const API_URL = "https://yaduvanshi-backend.onrender.com";
 
   const handleSearch = async (e) => {
     e.preventDefault();
 
     if (!searchValue.trim()) {
-      setError('Please enter a value to search');
+      setError("Please enter a value to search");
       return;
     }
 
     setLoading(true);
-    setError('');
+    setError("");
     setResult(null);
     setSearched(true);
 
     try {
       let response;
 
-      if (searchType === 'phone') {
-        response = await axios.get(`${API_URL}/api/talent-result/check/${searchValue.trim()}`);
+      if (searchType === "phone") {
+        response = await axios.get(
+          `${API_URL}/api/talent-result/check/${searchValue.trim()}`,
+        );
         if (response.data.success) {
           setResult(response.data.data);
         } else {
-          setError(response.data.message || 'No result found');
+          setError(response.data.message || "No result found");
         }
       } else {
         // For name and father name search
-        response = await axios.get(`${API_URL}/api/talent-result/public/all?search=${encodeURIComponent(searchValue.trim())}&limit=1`);
+        response = await axios.get(
+          `${API_URL}/api/talent-result/public/all?search=${encodeURIComponent(searchValue.trim())}&limit=1`,
+        );
         if (response.data.success && response.data.data.length > 0) {
           setResult(response.data.data[0]);
         } else {
-          setError('No result found for this search. Please check your input.');
+          setError("No result found for this search. Please check your input.");
         }
       }
     } catch (err) {
-      console.error('Search error:', err);
-      setError(err.response?.data?.message || 'No result found for this search. Please check your input.');
+      console.error("Search error:", err);
+      setError(
+        err.response?.data?.message ||
+          "No result found for this search. Please check your input.",
+      );
     } finally {
       setLoading(false);
     }
@@ -141,7 +155,7 @@ const TalentExamResultByPhoneNumber = () => {
           </div>
           <div class="info-row">
             <span class="label">Roll Number:</span>
-            <span class="value">${result.rollNo || '-'}</span>
+            <span class="value">${result.rollNo || "-"}</span>
           </div>
           <div class="info-row">
             <span class="label">Marks Obtained:</span>
@@ -153,13 +167,13 @@ const TalentExamResultByPhoneNumber = () => {
           </div>
           <div class="info-row">
             <span class="label">Result:</span>
-            <span class="value" style="color: ${result.resultStatus === 'pass' ? 'green' : 'red'}; font-weight: bold;">
-              ${result.resultStatus === 'pass' ? 'PASS' : 'FAIL'}
+            <span class="value" style="color: ${result.resultStatus === "pass" ? "green" : "red"}; font-weight: bold;">
+              ${result.resultStatus === "pass" ? "PASS" : "FAIL"}
             </span>
           </div>
         </div>
         <div class="rank">
-          🏆 Rank: ${result.rank || '-'}
+          🏆 Rank: ${result.rank || "-"}
         </div>
         <div class="footer">
           <p>This is a system generated result. Valid with official stamp.</p>
@@ -180,17 +194,17 @@ const TalentExamResultByPhoneNumber = () => {
   };
 
   const getRankBadge = (rank) => {
-    if (rank === 1) return '🥇 Gold Medalist - 1st Rank';
-    if (rank === 2) return '🥈 Silver Medalist - 2nd Rank';
-    if (rank === 3) return '🥉 Bronze Medalist - 3rd Rank';
+    if (rank === 1) return "🥇 Gold Medalist - 1st Rank";
+    if (rank === 2) return "🥈 Silver Medalist - 2nd Rank";
+    if (rank === 3) return "🥉 Bronze Medalist - 3rd Rank";
     return `${rank}${getRankSuffix(rank)} Rank`;
   };
 
   const getRankSuffix = (rank) => {
-    if (rank === 1) return 'st';
-    if (rank === 2) return 'nd';
-    if (rank === 3) return 'rd';
-    return 'th';
+    if (rank === 1) return "st";
+    if (rank === 2) return "nd";
+    if (rank === 3) return "rd";
+    return "th";
   };
 
   return (
@@ -200,7 +214,8 @@ const TalentExamResultByPhoneNumber = () => {
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Check Your <span className="text-[#B8860B]">Talent Exam Result</span>
+            Check Your{" "}
+            <span className="text-[#B8860B]">Talent Exam Result</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto">
             Enter your details below to view your exam results
@@ -213,38 +228,40 @@ const TalentExamResultByPhoneNumber = () => {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="bg-gradient-to-r from-[#0B3B2C] to-[#1a5a3a] px-6 py-4">
             <h2 className="text-xl font-bold text-white">Find Your Result</h2>
-            <p className="text-gray-200 text-sm">Search by Phone Number, Name, or Father's Name</p>
+            <p className="text-gray-200 text-sm">
+              Search by Phone Number, Name, or Father's Name
+            </p>
           </div>
 
           <div className="p-6">
             {/* Search Type Tabs */}
             <div className="flex flex-wrap gap-3 mb-6">
               <button
-                onClick={() => setSearchType('phone')}
+                onClick={() => setSearchType("phone")}
                 className={`px-5 py-2 rounded-lg font-medium transition flex items-center gap-2 ${
-                  searchType === 'phone'
-                    ? 'bg-[#B8860B] text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  searchType === "phone"
+                    ? "bg-[#B8860B] text-white shadow-md"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 <FaPhone /> Phone Number
               </button>
               <button
-                onClick={() => setSearchType('name')}
+                onClick={() => setSearchType("name")}
                 className={`px-5 py-2 rounded-lg font-medium transition flex items-center gap-2 ${
-                  searchType === 'name'
-                    ? 'bg-[#B8860B] text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  searchType === "name"
+                    ? "bg-[#B8860B] text-white shadow-md"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 <FaUser /> Student Name
               </button>
               <button
-                onClick={() => setSearchType('father')}
+                onClick={() => setSearchType("father")}
                 className={`px-5 py-2 rounded-lg font-medium transition flex items-center gap-2 ${
-                  searchType === 'father'
-                    ? 'bg-[#B8860B] text-white shadow-md'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  searchType === "father"
+                    ? "bg-[#B8860B] text-white shadow-md"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 <FaUserTie /> Father's Name
@@ -252,7 +269,10 @@ const TalentExamResultByPhoneNumber = () => {
             </div>
 
             {/* Search Form */}
-            <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4">
+            <form
+              onSubmit={handleSearch}
+              className="flex flex-col md:flex-row gap-4"
+            >
               <div className="flex-1">
                 <div className="relative">
                   <input
@@ -260,18 +280,18 @@ const TalentExamResultByPhoneNumber = () => {
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
                     placeholder={
-                      searchType === 'phone'
-                        ? 'Enter 10-digit mobile number...'
-                        : searchType === 'name'
-                        ? 'Enter student name...'
-                        : 'Enter father\'s name...'
+                      searchType === "phone"
+                        ? "Enter 10-digit mobile number..."
+                        : searchType === "name"
+                          ? "Enter student name..."
+                          : "Enter father's name..."
                     }
                     className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#B8860B] focus:border-transparent"
                   />
                   <div className="absolute left-4 top-3.5 text-gray-400">
-                    {searchType === 'phone' && <FaPhone />}
-                    {searchType === 'name' && <FaUser />}
-                    {searchType === 'father' && <FaUserTie />}
+                    {searchType === "phone" && <FaPhone />}
+                    {searchType === "name" && <FaUser />}
+                    {searchType === "father" && <FaUserTie />}
                   </div>
                 </div>
               </div>
@@ -285,13 +305,16 @@ const TalentExamResultByPhoneNumber = () => {
                 ) : (
                   <FaSearch />
                 )}
-                {loading ? 'Searching...' : 'Search Result'}
+                {loading ? "Searching..." : "Search Result"}
               </button>
             </form>
 
             {/* Tips */}
             <div className="mt-4 text-sm text-gray-500">
-              <p>💡 Tip: For best results, enter the exact phone number or name as registered.</p>
+              <p>
+                💡 Tip: For best results, enter the exact phone number or name
+                as registered.
+              </p>
             </div>
           </div>
         </div>
@@ -307,12 +330,23 @@ const TalentExamResultByPhoneNumber = () => {
         {/* Error State */}
         {error && !loading && searched && (
           <div className="mt-8 bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <svg className="mx-auto h-12 w-12 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <svg
+              className="mx-auto h-12 w-12 text-red-500 mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
             </svg>
             <p className="text-red-600 font-medium">{error}</p>
             <p className="text-gray-500 text-sm mt-2">
-              Please check your details and try again. If you continue to face issues, contact the academy.
+              Please check your details and try again. If you continue to face
+              issues, contact the academy.
             </p>
           </div>
         )}
@@ -321,32 +355,45 @@ const TalentExamResultByPhoneNumber = () => {
         {result && !loading && (
           <div className="mt-8 bg-white rounded-2xl shadow-xl overflow-hidden">
             {/* Rank Banner */}
-            <div className="bg-gradient-to-r from-[#B8860B] to-[#0B3B2C] px-6 py-4 text-center">
-              <div className="text-white">
-                <div className="text-3xl font-bold">{getRankBadge(result.rank)}</div>
-                <div className="text-sm mt-1">🎉 Congratulations! 🎉</div>
+            {result.rank && (
+              <div className="bg-gradient-to-r from-[#B8860B] to-[#0B3B2C] px-6 py-4 text-center">
+                <div className="text-white">
+                  <div className="text-3xl font-bold">
+                    {getRankBadge(result.rank)}
+                  </div>
+                  <div className="text-sm mt-1">🎉 Congratulations! 🎉</div>
+                </div>
               </div>
-            </div>
-
+            )}
             {/* Result Content */}
             <div className="p-6">
               <div className="text-center mb-6">
                 <div className="inline-block bg-[#0B3B2C]/10 rounded-full px-4 py-1">
-                  <span className="text-sm font-semibold text-[#B8860B]">TALENT EXAM RESULT {new Date().getFullYear()}</span>
+                  <span className="text-sm font-semibold text-[#B8860B]">
+                    TALENT EXAM RESULT {new Date().getFullYear()}
+                  </span>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
-                  <span className="font-semibold text-gray-600">Student Name:</span>
-                  <span className="text-gray-800 font-medium">{result.name}</span>
+                  <span className="font-semibold text-gray-600">
+                    Student Name:
+                  </span>
+                  <span className="text-gray-800 font-medium">
+                    {result.name}
+                  </span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
-                  <span className="font-semibold text-gray-600">Father's Name:</span>
+                  <span className="font-semibold text-gray-600">
+                    Father's Name:
+                  </span>
                   <span className="text-gray-800">{result.fName}</span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
-                  <span className="font-semibold text-gray-600">Phone Number:</span>
+                  <span className="font-semibold text-gray-600">
+                    Phone Number:
+                  </span>
                   <span className="text-gray-800">{result.phone}</span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
@@ -356,27 +403,39 @@ const TalentExamResultByPhoneNumber = () => {
                   </span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
-                  <span className="font-semibold text-gray-600">Roll Number:</span>
-                  <span className="text-gray-800">{result.rollNo || '-'}</span>
+                  <span className="font-semibold text-gray-600">
+                    Roll Number:
+                  </span>
+                  <span className="text-gray-800">{result.rollNo || "-"}</span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
-                  <span className="font-semibold text-gray-600">Marks Obtained:</span>
-                  <span className="text-2xl font-bold text-[#B8860B]">{result.marks} / 100</span>
+                  <span className="font-semibold text-gray-600">
+                    Marks Obtained:
+                  </span>
+                  <span className="text-2xl font-bold text-[#B8860B]">
+                    {result.marks} / 100
+                  </span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
-                  <span className="font-semibold text-gray-600">Percentage:</span>
+                  <span className="font-semibold text-gray-600">
+                    Percentage:
+                  </span>
                   <span className="text-lg font-semibold text-gray-800">
-                    {result.percentage || ((result.marks / 100) * 100).toFixed(2)}%
+                    {result.percentage ||
+                      ((result.marks / 100) * 100).toFixed(2)}
+                    %
                   </span>
                 </div>
                 <div className="flex flex-wrap justify-between py-3 border-b border-gray-200">
                   <span className="font-semibold text-gray-600">Result:</span>
-                  <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                    result.resultStatus === 'pass'
-                      ? 'bg-green-100 text-green-700'
-                      : 'bg-red-100 text-red-700'
-                  }`}>
-                    {result.resultStatus === 'pass' ? '✓ PASS' : '✗ FAIL'}
+                  <span
+                    className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      result.resultStatus === "pass"
+                        ? "bg-green-100 text-green-700"
+                        : "bg-red-100 text-red-700"
+                    }`}
+                  >
+                    {result.resultStatus === "pass" ? "✓ PASS" : "✗ FAIL"}
                   </span>
                 </div>
               </div>
@@ -400,8 +459,13 @@ const TalentExamResultByPhoneNumber = () => {
 
             {/* Footer Message */}
             <div className="bg-gray-50 px-6 py-4 text-center text-sm text-gray-500 border-t">
-              <p>This is a system generated result. For any discrepancies, please contact the academy.</p>
-              <p className="mt-1">📞 Yaduvanshi Academy Bansur: +91 8949540232 | +91 9460129249</p>
+              <p>
+                This is a system generated result. For any discrepancies, please
+                contact the academy.
+              </p>
+              <p className="mt-1">
+                📞 Yaduvanshi Academy Bansur: +91 8949540232 | +91 9460129249
+              </p>
             </div>
           </div>
         )}
@@ -418,22 +482,34 @@ const TalentExamResultByPhoneNumber = () => {
               <div className="w-12 h-12 bg-[#B8860B]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-[#B8860B] font-bold text-xl">1</span>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Select Search Type</h3>
-              <p className="text-sm text-gray-600">Choose to search by Phone Number, Student Name, or Father's Name</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                Select Search Type
+              </h3>
+              <p className="text-sm text-gray-600">
+                Choose to search by Phone Number, Student Name, or Father's Name
+              </p>
             </div>
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-[#B8860B]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-[#B8860B] font-bold text-xl">2</span>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Enter Details</h3>
-              <p className="text-sm text-gray-600">Enter the registered phone number or name correctly</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                Enter Details
+              </h3>
+              <p className="text-sm text-gray-600">
+                Enter the registered phone number or name correctly
+              </p>
             </div>
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-[#B8860B]/10 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-[#B8860B] font-bold text-xl">3</span>
               </div>
-              <h3 className="font-semibold text-gray-800 mb-2">View & Download</h3>
-              <p className="text-sm text-gray-600">View your result and download/print for future reference</p>
+              <h3 className="font-semibold text-gray-800 mb-2">
+                View & Download
+              </h3>
+              <p className="text-sm text-gray-600">
+                View your result and download/print for future reference
+              </p>
             </div>
           </div>
         </div>
@@ -442,9 +518,7 @@ const TalentExamResultByPhoneNumber = () => {
       {/* Contact Support */}
       <div className="bg-[#0B3B2C] py-8">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-white text-lg mb-3">
-            Need help with your result?
-          </p>
+          <p className="text-white text-lg mb-3">Need help with your result?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+918949540232"
