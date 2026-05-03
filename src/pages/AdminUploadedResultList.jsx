@@ -21,7 +21,7 @@ const AdminUploadedResultList = () => {
     setLoading(true);
     try {
       // Change API_URL to your production URL if needed
-      const API_URL = 'https://yaduvanshi-backend.vercel.app';
+      const API_URL = 'http://localhost:5000';
       // OR for local: const API_URL = 'http://localhost:5000';
 
       let url = `${API_URL}/api/talent-result/public/all?page=${currentPage}&limit=${itemsPerPage}`;
@@ -53,7 +53,7 @@ const AdminUploadedResultList = () => {
   // Fetch statistics (NO AUTHENTICATION)
   const fetchStats = async () => {
     try {
-      const API_URL = 'https://yaduvanshi-backend.vercel.app';
+      const API_URL = 'http://localhost:5000';
       // OR for local: const API_URL = 'http://localhost:5000';
 
       // NO AUTH HEADERS NEEDED
@@ -71,7 +71,7 @@ const AdminUploadedResultList = () => {
   const exportToExcel = async () => {
     setExporting(true);
     try {
-      const API_URL = 'https://yaduvanshi-backend.vercel.app';
+      const API_URL = 'http://localhost:5000';
 
       // Fetch all results (without pagination) - NO AUTH
       const response = await axios.get(`${API_URL}/api/talent-result/public/all?limit=5000`);

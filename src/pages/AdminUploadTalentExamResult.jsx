@@ -148,7 +148,7 @@ const AdminUploadTalentExamResult = () => {
       }
 
       // const API_URL = 'http://localhost:5000'; // For local development
-      const API_URL = 'https://yaduvanshi-backend.vercel.app'; // For production
+      const API_URL = 'http://localhost:5000'; // For production
 
       const batchSize = 50;
       let uploaded = 0;
