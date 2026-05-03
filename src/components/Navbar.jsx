@@ -41,7 +41,7 @@ const Navbar = () => {
           : "bg-gradient-to-r from-[#0B3B2C] to-[#0f4a37] shadow-md py-3"
       }`}
     >
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
