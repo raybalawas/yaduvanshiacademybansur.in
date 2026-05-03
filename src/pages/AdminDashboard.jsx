@@ -15,7 +15,7 @@ const AdminDashboard = () => {
       const token = localStorage.getItem("adminToken");
 
       try {
-        const res = await axios.get("https://yaduvanshi-backend.onrender.com//api/admin/dashboard-stats", {
+        const res = await axios.get("https://yaduvanshi-backend.onrender.com/api/admin/dashboard-stats", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

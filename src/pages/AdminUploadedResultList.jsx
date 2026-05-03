@@ -21,8 +21,8 @@ const AdminUploadedResultList = () => {
     setLoading(true);
     try {
       // Change API_URL to your production URL if needed
-      const API_URL = 'https://yaduvanshi-backend.onrender.com/';
-      // OR for local: const API_URL = 'https://yaduvanshi-backend.onrender.com/';
+      const API_URL = 'https://yaduvanshi-backend.onrender.com';
+      // OR for local: const API_URL = 'https://yaduvanshi-backend.onrender.com';
 
       let url = `${API_URL}/api/talent-result/public/all?page=${currentPage}&limit=${itemsPerPage}`;
 
@@ -53,8 +53,8 @@ const AdminUploadedResultList = () => {
   // Fetch statistics (NO AUTHENTICATION)
   const fetchStats = async () => {
     try {
-      const API_URL = 'https://yaduvanshi-backend.onrender.com/';
-      // OR for local: const API_URL = 'https://yaduvanshi-backend.onrender.com/';
+      const API_URL = 'https://yaduvanshi-backend.onrender.com';
+      // OR for local: const API_URL = 'https://yaduvanshi-backend.onrender.com';
 
       // NO AUTH HEADERS NEEDED
       const response = await axios.get(`${API_URL}/api/talent-result/public/stats`);
@@ -71,7 +71,7 @@ const AdminUploadedResultList = () => {
   const exportToExcel = async () => {
     setExporting(true);
     try {
-      const API_URL = 'https://yaduvanshi-backend.onrender.com/';
+      const API_URL = 'https://yaduvanshi-backend.onrender.com';
 
       // Fetch all results (without pagination) - NO AUTH
       const response = await axios.get(`${API_URL}/api/talent-result/public/all?limit=5000`);

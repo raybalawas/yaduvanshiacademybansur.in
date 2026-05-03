@@ -15,7 +15,7 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      const API_URL = 'https://yaduvanshi-backend.onrender.com/';
+      const API_URL = 'https://yaduvanshi-backend.onrender.com';
       const response = await axios.post(`${API_URL}/api/admin/login`, {
         email,
         password
