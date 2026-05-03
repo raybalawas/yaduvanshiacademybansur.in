@@ -37,7 +37,7 @@ function TalentExam() {
   const [formUrl, setFormUrl] = useState("");
 
   useEffect(() => {
-    const origin = window.location.origin;
+    const origin = "https://yaduvanshiacademybansur-in.vercel.app";
     setFormUrl(`${origin}/`);
   }, []);
 
