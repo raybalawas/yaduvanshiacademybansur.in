@@ -38,7 +38,7 @@ function TalentExam() {
 
   useEffect(() => {
     const origin = window.location.origin;
-    setFormUrl(`${origin}/telent-search-exam`);
+    setFormUrl(`${origin}/`);
   }, []);
 
   const validateForm = () => {

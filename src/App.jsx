@@ -9,7 +9,7 @@ import Courses from "./pages/Courses";
 import Gallery from "./pages/Gallery";
 import Admission from "./pages/Admission";
 import Contact from "./pages/Contact";
-import TalentExamQR from "./pages/TalentExam";
+// import TalentExamQR from "./pages/TalentExam";
 
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminUsers from "./pages/AdminUsers.jsx";
