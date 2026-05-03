@@ -147,8 +147,8 @@ const AdminUploadTalentExamResult = () => {
         return;
       }
 
-      // const API_URL = 'http://localhost:5000'; // For local development
-      const API_URL = 'http://localhost:5000'; // For production
+      // const API_URL = 'https://yaduvanshi-backend.onrender.com/'; // For local development
+      const API_URL = 'https://yaduvanshi-backend.onrender.com/'; // For production
 
       const batchSize = 50;
       let uploaded = 0;

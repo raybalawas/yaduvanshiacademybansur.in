@@ -8,7 +8,7 @@ const AdminServices = () => {
   const token = localStorage.getItem("adminToken");
 
   const fetchServices = async () => {
-    const res = await axios.get("http://localhost:5000/api/services", {
+    const res = await axios.get("https://yaduvanshi-backend.onrender.com//api/services", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setServices(res.data);
@@ -16,7 +16,7 @@ const AdminServices = () => {
 
   const createService = async () => {
     if (!newService.title) return alert("Title required");
-    await axios.post("http://localhost:5000/api/services", newService, {
+    await axios.post("https://yaduvanshi-backend.onrender.com//api/services", newService, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setNewService({ title: "", description: "" });
@@ -24,7 +24,7 @@ const AdminServices = () => {
   };
 
   const deleteService = async (id) => {
-    await axios.delete(`http://localhost:5000/api/services/${id}`, {
+    await axios.delete(`https://yaduvanshi-backend.onrender.com//api/services/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchServices();

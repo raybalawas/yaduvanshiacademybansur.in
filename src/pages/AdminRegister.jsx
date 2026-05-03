@@ -14,7 +14,7 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/login", {
+      const res = await axios.post("https://yaduvanshi-backend.onrender.com//api/admin/login", {
         email,
         password,
       });
@@ -29,7 +29,7 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0b4f3f] via-[#2f6b59] to-[#4b7f68] flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-5xl grid md:grid-cols-2 overflow-hidden rounded-3xl shadow-2xl bg-white/10 backdrop-blur-md border border-white/20">
-        
+
         {/* Left Theme Section */}
         <div className="hidden md:flex flex-col justify-center px-10 py-14 text-white bg-gradient-to-b from-[#064e3b] to-[#0b5d47]">
           <div className="flex items-center gap-4 mb-8">

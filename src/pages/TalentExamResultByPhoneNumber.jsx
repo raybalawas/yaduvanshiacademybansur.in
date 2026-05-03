@@ -10,7 +10,7 @@ const TalentExamResultByPhoneNumber = () => {
   const [error, setError] = useState('');
   const [searched, setSearched] = useState(false);
 
-  const API_URL = 'http://localhost:5000';
+  const API_URL = 'https://yaduvanshi-backend.onrender.com/';
 
   const handleSearch = async (e) => {
     e.preventDefault();
