@@ -229,7 +229,7 @@ const TalentExamResultByPhoneNumber = () => {
           <div className="bg-gradient-to-r from-[#0B3B2C] to-[#1a5a3a] px-6 py-4">
             <h2 className="text-xl font-bold text-white">Find Your Result</h2>
             <p className="text-gray-200 text-sm">
-              Search by Phone Number, Name, or Father's Name
+              Search by Phone Number
             </p>
           </div>
 
@@ -246,7 +246,7 @@ const TalentExamResultByPhoneNumber = () => {
               >
                 <FaPhone /> Phone Number
               </button>
-              <button
+              {/* <button
                 onClick={() => setSearchType("name")}
                 className={`px-5 py-2 rounded-lg font-medium transition flex items-center gap-2 ${
                   searchType === "name"
@@ -265,7 +265,7 @@ const TalentExamResultByPhoneNumber = () => {
                 }`}
               >
                 <FaUserTie /> Father's Name
-              </button>
+              </button> */}
             </div>
 
             {/* Search Form */}

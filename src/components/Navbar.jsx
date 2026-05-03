@@ -27,7 +27,7 @@ const Navbar = () => {
     { name: "Courses", path: "/courses" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
-    { name: "Telent Exam", path: "/telent-search-exam" },
+    // { name: "Telent Exam", path: "/telent-search-exam" },
     { name: "Telent Exam Result", path: "/result" },
   ];
 
