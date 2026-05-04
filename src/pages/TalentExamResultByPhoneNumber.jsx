@@ -379,7 +379,7 @@ const TalentExamResultByPhoneNumber = () => {
             contact the academy.
           </p>
           <p className="mt-1">
-            📞 Yaduvanshi Academy Bansur: +91 8949540232 | +91 9460129249
+            📞 Yaduvanshi Academy Bansur: +91 7725945908
           </p>
         </div>
       </div>
@@ -486,7 +486,7 @@ const TalentExamResultByPhoneNumber = () => {
             </form>
 
             <div className="mt-4 text-sm text-gray-500">
-              <p>💡 Tip: For best results, enter the exact phone number or name as registered.</p>
+              <p>💡 Tip: For best results, enter the exact phone number as registered.</p>
               <p className="mt-1 text-xs text-[#B8860B]">
                 📌 Note: 3rd & 4th class: 50 marks total | 5th-8th class: 60 marks total
               </p>
@@ -601,10 +601,10 @@ const TalentExamResultByPhoneNumber = () => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <p className="text-white text-lg mb-3">Need help with your result?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+918949540232" className="inline-flex items-center justify-center gap-2 bg-[#B8860B] hover:bg-[#9E7008] text-white px-6 py-2 rounded-lg font-semibold transition">
-              📞 Call Us: +91 8949540232
+            <a href="tel:+917725945908" className="inline-flex items-center justify-center gap-2 bg-[#B8860B] hover:bg-[#9E7008] text-white px-6 py-2 rounded-lg font-semibold transition">
+              📞 Call Us: +91 7725945908
             </a>
-            <a href="https://wa.me/918949540232" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+            <a href="https://wa.me/917725945908" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition">
               💬 WhatsApp Support
             </a>
           </div>
