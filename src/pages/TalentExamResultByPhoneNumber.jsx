@@ -425,7 +425,7 @@ const TalentExamResultByPhoneNumber = () => {
               >
                 <FaPhone /> Phone Number
               </button>
-              <button
+              {/* <button
                 onClick={() => setSearchType("name")}
                 className={`px-5 py-2 rounded-lg font-medium transition flex items-center gap-2 ${
                   searchType === "name"
@@ -444,7 +444,7 @@ const TalentExamResultByPhoneNumber = () => {
                 }`}
               >
                 <FaUserTie /> Father's Name
-              </button>
+              </button> */}
             </div>
 
             {/* Search Form */}
