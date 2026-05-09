@@ -46,7 +46,7 @@ function TalentExam() {
     }
     // Production Vercel URL
     else if (hostname === 'yaduvanshiacademybansur-in.vercel.app') {
-      baseUrl = 'https://yaduvanshiacademybansur-in.vercel.app/result';
+      baseUrl = 'https://yaduvanshiacademybansur-in.vercel.app/';
     }
     // Custom domain (if you add later)
     else if (hostname === 'yaduvanshi.digital') {

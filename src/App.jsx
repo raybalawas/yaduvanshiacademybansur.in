@@ -18,7 +18,7 @@ import AdminRegister from "./pages/AdminRegister.jsx";
 import AdminProtectedRoute from "./admin/components/AdminProtectedRoute.jsx";
 import AdminUploadTalentExamResult from "./pages/AdminUploadTalentExamResult.jsx";
 import AdminUploadedResultList from "./pages/AdminUploadedResultList.jsx";
-import TalentExamResultByPhoneNumber from "./pages/TalentExamResultByPhoneNumber.jsx";
+// import TalentExamResultByPhoneNumber from "./pages/TalentExamResultByPhoneNumber.jsx";
 function App() {
   return (
     <BrowserRouter>
@@ -33,17 +33,17 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/telent-search-exam" element={<TalentExamQR />} />
 
-          <Route path="/result" element={<TalentExamResultByPhoneNumber />} />
+          {/* <Route path="/result" element={<TalentExamResultByPhoneNumber />} /> */}
         </Route>
 
         {/* ADMIN PANEL */}
         <Route element={<AdminLayout />}>
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/admin-users" element={<AdminUsers />} />
-          <Route
+          {/* <Route
             path="admin-upload-result"
             element={<TalentExamResultByPhoneNumber />}
-          />
+          /> */}
           <Route
             path="admin-uploaded-result-list"
             element={<AdminUploadedResultList />}
